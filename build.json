@@ -1,0 +1,11 @@
+{
+     "android": {
+      "release": {
+        "keystore": "C:\\AndroidAPK-release-key.keystore",
+        "storePassword": "Masterek11",
+        "alias": "kishore",
+        "password": "Masterek11",
+        "keystoreType": ""
+      }
+     }
+ }

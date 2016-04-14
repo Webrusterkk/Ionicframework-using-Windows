@@ -1,0 +1,35 @@
+{
+  "changedFilesIos": [
+    "www\\index.html",
+    "www\\scripts\\controllers.js",
+    "plugins\\fetch.json",
+    "config.xml"
+  ],
+  "deletedFilesIos": [
+    "css\\ionic1.css",
+    "css\\Test.css",
+    "css\\indexkkversion.css",
+    "css\\ionic.css",
+    "css\\vssver2.scc",
+    "css\\LatestIonic.css",
+    "css\\index.css",
+    "css\\ionicKKversion.css",
+    "www\\scripts\\normalize.js"
+  ],
+  "addedPluginsIos": [],
+  "deletedPluginsIos": [],
+  "changedFiles": [],
+  "deletedFiles": [
+    "css\\ionic1.css",
+    "css\\Test.css",
+    "css\\indexkkversion.css",
+    "css\\ionic.css",
+    "css\\vssver2.scc",
+    "css\\LatestIonic.css",
+    "css\\index.css",
+    "css\\ionicKKversion.css",
+    "www\\scripts\\normalize.js"
+  ],
+  "addedPlugins": [],
+  "deletedPlugins": []
+}

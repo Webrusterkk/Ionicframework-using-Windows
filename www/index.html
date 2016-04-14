@@ -1,0 +1,3716 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+    <meta  name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <title>Master E.K</title>
+   <script src="scripts/winstore-jscompat.js"></script>
+    <!-- Masterek references -->
+    <link href="css/ionic.css" rel="stylesheet" />
+    <link href="css/indexkkversion.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+   
+    <!--ionic Angular Js-->
+    <!--<script src="scripts/ionic.bundle.min.js"></script>-->
+ 
+    <!--<script src="scripts/ionic.bundle.min.js"></script>-->
+    <script src="scripts/ionic.bundle.js"></script>
+    <!--<script src="ms-appx://.app/plugins/cordova-plugin-media/src/windows/MediaProxy.js"></script>-->
+    <script src="cordova.js"></script>
+    <script src="scripts/ng-cordova.min.js"></script>
+    <script src="scripts/imagelazyload.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/services.js"></script>
+    
+    <!--This is backbutton script-->
+    <script >
+        function goBack() {
+
+            window.history.back();
+            }
+
+    </script>
+    <style type="text/css">
+        .list_col img {
+    width: 100%;
+    height: 110px;
+}
+.list_col{
+     width: 48%;
+    max-width: 48%;
+    margin: 1%;
+    float: left;
+    text-align: center;
+    position: relative;
+    border: 1px solid #eee;
+    top: 10px;
+    bottom: 10px;
+}
+.top_slide_box {
+    width: 80%;
+    left:10%;
+    height: 220px;
+  margin-bottom:20px;
+  text-align: center;
+}
+
+.top_slide_box .slider-slide {
+    overflow: hidden;
+}
+
+.top_slide_box .slider-pager {
+    bottom: 35px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.top_slide_box .slider-pager .slider-pager-page {
+    color: #DDDDDD;
+}
+
+.top_slide_box .slider-slide img {
+    width: 100%;
+    height: 85%;
+}
+
+.list_row {
+
+    position: absolute;
+    width: 100%;
+}
+
+.list_col {
+    width: 48%;
+    max-width: 48%;
+    margin: 1%;
+    float: left;
+    text-align: center;
+    position: relative;
+    border: 1px solid #eee;
+    bottom: 10px;
+}
+
+.list_col img {
+    width: 80%;
+    height: 100px;
+}
+    </style>
+</head>
+<body ng-app="starter">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+          Landing Page
+    -->
+    <ion-nav-view></ion-nav-view>
+
+
+    <script id="templates/event-menu.html" type="text/ng-template">
+        <ion-side-menus enable-menu-with-back-views="false">
+            <ion-side-menu-content>
+                <ion-nav-bar class="bar-positive">
+                    <ion-nav-back-buttonv>
+                    </ion-nav-back-buttonv>
+                    <ion-nav-buttons side="left">
+                        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+                       
+
+                    </ion-nav-buttons>
+                  
+                        <ion-nav-buttons side="right">
+                            
+                                <button id="first" class="button button-icon button-clear ion-radio-waves" ng-controller="MediaCtrl" ng-click="firstpopup();InitialStart(false)" style="margin-top:10px;"></button>
+                            
+                           <a href="https://www.youtube.com/c/MasterEKSpiritualServiceMission">
+                                    <button class="button button-icon button-clear ion-ios-videocam-outline" style="margin-top:10px;"></button>
+                                </a>
+                           
+                       </ion-nav-buttons>
+                   
+                   
+                </ion-nav-bar>
+                <div class="card1" style="padding-top:12px;">
+
+                    <div class="item1 item-text-wrap">
+
+
+                        <ion-header-bar style="margin-top:22px; height:26px; background-color:#F57538;color:white;">
+
+                            <div ng-controller="marqueeimagescontroller" id="cf4a" class="shadow" menu-toggle="left">
+
+                                <img ng-repeat="d in try.Advertisements.Ad" ng-src="http://www.masterek.org/{{d.ImageUrl.substring(2)}}" />
+
+                            </div>
+
+                            <div ng-controller="getcaptioncontroller" style="padding-left:31px;margin-top:0px;">
+                                <marquee direction="left" behavior="SCROLL" scrolldelay="300" scrollamount="10">
+                                    <span ng-repeat="d in try.captions.name">
+                                        <b>{{d.text}}</b>
+                                    </span>
+                                </marquee>
+                                <!--<span style="overflow:hidden;white-space: nowrap;">
+                                    <b>{{try}}</b>
+                                </span>-->
+                         
+                            </div>
+
+                        </ion-header-bar>
+                    </div>
+                </div>
+                <ion-nav-view name="menuContent">
+                </ion-nav-view>
+            </ion-side-menu-content>
+            <ion-side-menu side="left" title="welcome">
+                <ion-header-bar class="bar-assertive">
+                    <h1 class="title"></h1>
+                </ion-header-bar>
+                <ion-content class="custom">
+                    <ul class="list">
+                        <!-- Note each link has the 'menu-close' attribute so the menu auto closes when clicking on one of these links -->
+                        <a href="#/event/home" class="item custom" menu-close>Home</a>
+                        <a href="#/event/about-organisation" class="item custom" menu-close>About Organisation</a>
+                        <a href="#/event/aboutmasters" class="item custom" menu-close>About Masters</a>
+                        <a href="#/event/aboutcenters" class="item custom" menu-close>About Centers</a>
+                        <a href="#/event/news" class="item custom" menu-close>News</a>
+                        <a href="#/event/events" class="item custom" menu-close>Events</a>
+                        <a href="#/event/imagegallery" class="item custom" menu-close>Gallery</a>
+                    </ul>
+
+                </ion-content>
+            </ion-side-menu>
+
+        </ion-side-menus>
+    </script>
+
+    <!-- Home Page-->
+    <script id="templates/home.html" type="text/ng-template">
+        <ion-view view-title="Welcome To Divine Site" class="backgroundohm" style="color:#000;">
+
+            <ion-content class="padding" style="background-color:#fff3ca">
+
+                <div class="content-wrapper">
+
+                    <table style="font-weight:500;font-size:110%;">
+                        <tr>
+                            <td>
+                                <p>
+                                    <span class="bold-text" style="font-weight: bold;">
+                                        <img src="images/masterek banr.png" style="width:100%; margin-top:0px;border-radius:15px;border:3px solid;border-color:#FAFAFA;" />
+                                        <span id="ContentPlaceHolder1_lblmm">Master EK Spiritual and Service Mission</span>
+                                    </span>
+                                    <span id="ContentPlaceHolder1_lblnn">
+                                        is an international
+                                        Service Organisation dedicated to the service to humanity. The main objective of
+                                        this Mission is to render service to humanity without any expectation. This is mainly
+                                        two-fold:
+                                    </span>
+                                </p>
+                                <p>
+                                    <span id="ContentPlaceHolder1_lbloo">To heal the sick through holistic methods following the footsteps of</span>
+                                    <span class="bold-text" style="font-weight: bold;">
+                                        <span id="ContentPlaceHolder1_lblyy">Master EK and other Masters</span>
+                                    </span>.
+                                </p>
+                                <p>
+                                    <span id="ContentPlaceHolder1_lblzz">
+                                        To transmit the Ageless Wisdom to one and all without any discrimination of race,
+                                        religion or sex. The method to lead a yogic life was given to the modern man in
+                                        a simplified manner by
+                                    </span>
+                                    <span class="bold-text" style="font-weight: bold;">
+                                        <span id="ContentPlaceHolder1_lblaa">Master CVV</span>
+                                    </span>.
+                                </p>
+                                <p>
+                                    <span id="ContentPlaceHolder1_lblbb">The message of</span><span class="bold-text" style="font-weight: bold;">
+                                        <span id="ContentPlaceHolder1_lblcc">Master CVV</span>
+                                    </span><span id="ContentPlaceHolder1_lbldd">
+                                        was spread through his
+                                        selected mediums and
+                                    </span><span class="bold-text" style="font-weight: bold;"><span id="ContentPlaceHolder1_lblee">Master EK</span></span>
+                                    <span id="ContentPlaceHolder1_lblff">is one among them.He is working as a Master of Synthesis in the work of</span><span class="bold-text" style="font-weight: bold;">
+                                        <span id="ContentPlaceHolder1_lblgg">Master CVV</span>
+                                    </span>
+                                    <span id="ContentPlaceHolder1_lblhh">and</span>
+                                    <span class="bold-text" style="font-weight: bold;">
+                                        <span id="ContentPlaceHolder1_lblii">Master Maitreya</span>
+                                    </span>.
+                                </p>
+                                <p>
+                                    <span class="bold-text" style="font-weight: bold;">
+                                        <span id="ContentPlaceHolder1_lbljj">Master EK Spiritual and Service Mission</span>
+                                    </span>
+                                    <span id="ContentPlaceHolder1_lblkk">was founded in his name to follow his footsteps.</span>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+            </ion-content>
+        </ion-view>
+    </script>
+
+    <!-- About Organisation -->
+
+    <script id="templates/about-organisation.html" type="text/ng-template">
+        <ion-view view-title="About Organisation" class="backgroundohm">
+
+            <ion-content style="background-color:#fff3ca">
+               
+                <div class="content-wrapper" style="padding:10px;font-weight:500;font-size:110%">
+                    <img src="images/masterek banr.png" style="width:100%; border-radius: 15px;border: 3px solid;border-color: #FAFAFA;" />
+                   
+                    <div class="text-i" style="text-align:center">
+                        <!--Narendra-->
+                       
+
+                        <!--<div style="margin: -14px;background: #FAEDC5;padding: 14px 10px;">-->
+                            <!--<h1 style="text-align:center; font-size: larger; font-weight: bolder; color: Maroon;">
+                                <span id="lblao" style="font-size: larger; font-weight: bold; margin-top:30px; margin-left:12px;
+                                        color: Maroon;">About Organisation</span>
+                            </h1>-->
+                            <div style="color:maroon">
+                                <span id="lblabo" class="sideheading" style="font-size: 20px;">About Organisation</span><br />
+                                <span id="lblfac" class="sideheading" style="font-size: 16px;">Founder & Chairman :</span>
+
+                                <span id="lblname" style="font-size: 16px; font-style: oblique;
+                                    ">Dr.E.Anantha Krishna</span><br />
+                                <span id="lblapbo" style="text-decoration: underline;">Activities performed by Organisation</span>
+                            </div>
+                        <!--</div>-->
+
+
+                        <div>
+
+                            <div>
+                                <div style="opacity: 0.85; filter: alpha(opacity=85%)" class="aboutmasterslist">
+                                    <ul style="list-style-image:url(images/icon2.png); padding-top: 15px; padding-left:30px;">
+                                        <li style="text-align: left; padding: 10px;">
+                                            <span id="lblfree">Free</span>
+                                            <strong>
+                                                <span id="lblms">Medical Service</span>
+                                            </strong>.
+                                        </li>
+                                        <li style="text-align: left; padding: 10px;">
+                                            <span id="lblInc">Inculcating</span>
+                                            <strong>
+                                                <span id="lblsp">spiritual grouping</span>
+                                            </strong> .
+                                        </li>
+                                        <li style="text-align: left; padding: 10px;">
+                                            <span id="lblimp">Imparting</span>
+                                            <strong>
+                                                <span id="lblse">spiritual education</span>&nbsp;
+                                            </strong><span id="lblintr">to anyone who is intreseted.</span>
+                                        </li>
+                                        <li style="text-align: left; padding: 10px;">
+                                            <span id="lbldev">Developing schools to impart education with</span>
+                                            <strong>
+                                                <span id="lblmoral">moral values and national spirits</span>
+                                            </strong>.
+                                        </li>
+                                        <li style="text-align: left; padding: 10px;">
+                                            <span id="lbltrain">Training the youth in</span>
+                                            <strong>
+                                                <span id="lblself">self employment</span>&nbsp;
+                                            </strong><span id="lbland">and servicing the society.</span>
+                                        </li>
+                                        <li style="text-align: left; padding: 10px;">
+                                            <span id="Label11">Networking all the people working in</span>&nbsp;<strong><span id="Label12">spiritual</span>&nbsp;</strong><span id="Label13">around the globe.</span>
+                                        </li>
+                                        <li style="text-align: left; padding: 10px;">
+                                            <span id="Label14">Training people into</span>
+                                            <strong>
+                                                <span id="Label15">healing science</span>&nbsp;
+                                            </strong><span id="Label16">
+                                                through homeopathy, Ayurvedic
+                                                and yoga.
+                                            </span>
+                                        </li>
+                                        <li style="text-align: left; padding: 10px;">
+                                            <span id="Label17">Spreading the ancient wisdom from&nbsp;the teachings of</span>
+                                            <strong>
+                                                <span id="Label18">Master Ek</span>
+                                            </strong> <strong>
+                                                <span id="Label19">and other Masters.</span>
+                                            </strong>
+                                        </li>
+                                        <li style="text-align: left; padding: 10px;">
+                                            <strong>
+                                                <span id="Label20">Spiritual fusion</span>&nbsp;
+                                            </strong><span id="Label21">of east and west as concieved by</span>
+                                            <strong>
+                                                <span id="Label22">Master Ek</span>
+                                            </strong>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </ion-content>
+        </ion-view>
+    </script>
+
+    <!-- About Centers -->
+    <script id="templates/aboutcenters.html" type="text/ng-template">
+        <!--Narendra-->
+        <ion-view view-title="About Centers" class="backgroundohm">
+
+            <ion-content>
+
+                <div class="content-wrapper" style="background-color:#fff3ca;font-size:110%;font-weight:500">
+                    <div class="centerinfo-content">
+                        <div id="divheadquarters">
+                            <h4 class="centerinfo-headings">HEAD QUARTERS</h4>
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>
+                                            Master E.K. Spiritual & Service Mission<br />
+                                            Sri Ekkirala Anantha Krishna
+                                        </strong>
+                                        <br />
+                                        Sweta Dweepam, Chinamushidiwada (B.O.)<br />
+                                        Visakhapatnam - 530 051.<br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone </strong>: (0891) 2566732<br />
+                                        <strong>Cell </strong>: 90006 86885<br />
+                                        <strong>E-mail  </strong>: ekdweepam@gmail.com<br />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>
+                                            Master E.K. Spiritual & Service Mission<br />
+                                            Dr. E.V.M. Acharya, D.H.M.S.,
+
+                                        </strong>
+                                        <br />
+                                        Master Homoeo Home<br />
+                                        48-12-8, E.K. Krishna Dweepam<br />
+                                        Srinagar, Prakasam Road,<br />
+                                        Visakhapatnam - 530 016.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0891) 2748679<br />
+                                        <strong>Cell</strong>
+                                        : 98495 28123
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+
+                        <div id="divhomeovidyalayms">
+
+                            <h4 class="centerinfo-headings">MASTER E.K. HOMOEO VAIDYALAYAMS</h4>
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>
+                                            Sri E.S.L. Narayana,
+
+                                        </strong>(M.A., Astrology)<br />
+                                        Swetadweepam<br />
+                                        Chinamushidiwada (B.O.)<br />
+                                        Visakhapatnam - 530 051.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0891) 2764273<br />
+                                        <strong>Cell</strong>
+                                        : 94405 90822
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>
+                                            Sri V. Lakshmana
+
+                                        </strong>
+                                        <br />
+                                        45-38-18, Srinivasamandiram<br />
+                                        Jagannadhapuram<br />
+                                        Visakhapatnam - 530 016.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0891) 2561910<br />
+                                        <strong>Cell</strong>
+                                        : 94403 39868
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>
+                                            Sri S. Bhanu Murthy
+
+                                        </strong>
+                                        <br />
+                                        MIG - II / 27-28,<br />
+                                        A.P.H.B. Colony, P.M. Palem,<br />
+                                        Visakhapatnam - 530 041
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0891) 3203036<br />
+                                        <strong>Cell</strong>
+                                        : 77023 65702
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri P.V. Ramacharyulu</strong><br />
+                                        Retd E.E.,<br />
+                                        12-21-15, Master E.K. Street, Yanadri Colony<br />
+                                        Yalamanchili - 531 055. (Visakhapatnam Dt.)
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08931) 231795<br />
+                                        <strong>Cell</strong>
+                                        : 94403 17613
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri P. Bhaskara Rao</strong><br />
+                                        Retd. Lecturer,<br />
+                                        Official Colony, Behind RTC Complex<br />
+                                        Saluru - 535 591.
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08964) 251589<br />
+                                        <strong>Cell</strong>
+                                        : 93979 91369
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Dr. C.L.N. Murthy,</strong> DHMSc.,
+                                        <br />
+                                        C/o. Sri P.V. Amaranath<br />
+                                        4-3-102/10, Srikrishna Dham<br />
+                                        Madhavapuram Road,<br />
+                                        Pithapuram - 533 450 (E.G.Dt.)
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08869) 255240<br />
+                                        <strong>Dr.C.L.N. Murthy Ph </strong>: 252226<br />
+                                        <strong>Cell</strong>
+                                        : 94908 74408
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri T.V.Raghava Rao</strong><br />
+                                        Basivireddy Choultry<br />
+                                        Samarlakota - 533 440 (E.G.Dt.)<br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 99499 50516
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri Y.V.V.V. Ramana</strong><br />
+                                        MIG 326, APHB Colony,<br />
+                                        Lalacheruvu,<br />
+                                        Rajahmundry - 533 006. (E.G.Dt)
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0883) 2410665<br />
+                                        <strong>Cell</strong>
+                                        : 98661 82825
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri B.K. Subrahmanyam,</strong><br />
+                                        18-262,IDA,<br />
+                                        ACME Graphites,<br />
+                                        Dowaleswaram - 533 124.(E.G.Dt)
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell </strong>: 94404 31457<br />
+                                        94916 89968
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri K.V.G.M. Krishnamraju</strong><br />
+                                        10-300M
+                                        <br />
+                                        Bhaskaranagar,<br />
+                                        K. Agraharam,<br />
+                                        Amalapuram - 533 201.(E.G.Dt)
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 99596 77299
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Dr. M.K.S.S. Prasad, M.B.B.S.</strong><br />
+                                        8-16-5/2, Suryanivas,<br />
+                                        E.K. Street, Pratapnagar,<br />
+                                        Kakinada - 533 004.
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Vaidyalayam</strong>
+                                        : 96764 62370
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri P. Dharma Raju,</strong><br />
+                                        Retd. S.A.,<br />
+                                        Tatipaka Matham,<br />
+                                        Tatipaka - 533 249.(E.G.Dt)
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08862) 248998<br />
+                                        <strong>Cell</strong>
+                                        : 99890 03373
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri. N. Radhakrishna,</strong><br />
+                                        Retd. Reader in Telugu,<br />
+                                        Chintalapativari Street,<br />
+                                        Kothapeta, China Amiram,<br />
+                                        Bhimavaram - 533 204.(W.G.Dt)
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong>
+                                        : (08816) 225115
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>
+                                            Sri Yatindra Homoeo Vaidyalayam,
+                                            H/o. Sri Ch. Harinadha Babu (Late)
+                                        </strong><br />
+                                        25-9-19, Narasimharaopet,<br />
+                                        Eluru - 534 006.
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08812) 239950
+                                        <br />
+                                        <strong>Sri V. Suryanarayana </strong>
+                                        : 239875
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri V. Sudarsana Rao</strong>
+                                        <br />
+                                        E.K. Nilayam, 54-14/1-15/1,<br />
+                                        Bharathinagar,<br />
+                                        Union Bank Colony<br />
+                                        Vijayawada - 520 008.
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0866) 2540415
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 96764 45360
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri G. Rama Rao,</strong><br />
+                                        42-2/1-193,<br />
+                                        6th Line, Devinagar<br />
+                                        Vijayawada - 520 003.
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0866) 2531730
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 94408 84396
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri Yatindra Homoeo Vaidyalayam,</strong><br />
+                                        Sri M. Sitaram,
+                                        <br />
+                                        Sri Krishna Ashramam,
+                                        <br />
+                                        <strong>Pedamuttevi</strong>.(b.o) - 521 136.
+                                        <br />
+                                        Movva Mandalam, (Krishna Dt.)
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08671) 256270
+                                        <br />
+                                        256080
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri N.S. Ramanujam,</strong><br />
+                                        6/34, Sri Gurudweepam<br />
+                                        Prakasam chowk<br />
+                                        Gannavaram - 521 101.(Krishna Dt.)
+
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08676) 252366
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 94917 52366
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri J. Raghu Ram,</strong><br />
+                                        28-366, Circlepeta,<br />
+                                        Machilipatnam - 521 001. (Krishna Dt.)<br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 94907 42907
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri O. Ramachandra Rao,</strong><br />
+                                        1/7, Pattabhi Sitaramnagar,<br />
+                                        Nagaralu, Amaravathi Road,<br />
+                                        Guntur - 522 034.
+
+
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0863) 2240918
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 94418 90096
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri M.Samba Siva Rao,</strong>
+                                        E.K.C.V.V. Nilayam,
+                                        <br />
+                                        Near Raju Rice Mill,
+                                        <br />
+                                        Amaravathi - 522 020. (Guntur Dt.)
+                                        <br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 94419 15538
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Master E.K. Homoeo Vaidyalayam</strong>
+                                        <br />
+                                        Sri Kodanda Ramalayam, Nazarpet,<br />
+                                        Opp. Putta Raghaviah Rice Mill<br />
+                                        Tenali - 522 201.(Guntur Dt.)<br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 94904 85989
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri M. Punnayya Sastry,</strong><br />
+                                        Retd. Jr. Lecturer in Telugu
+                                        <br />
+                                        # 5-8-33/2, Jawaharlal Nehru Road, Nagarjuna Nagar,
+                                        <br />
+                                        Sattenapalli - 522 403. (Guntur Dist.)
+                                        <br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong> : 99499 01346
+                                        <br />
+                                        94403 60223
+                                        <br />
+                                        <strong>Ph </strong>
+                                        : 08641 - 234156
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri Ch. Brahmananda Reddy,</strong><br />
+                                        Opp. Bus Stand ,<br />
+                                        Behind Gosamrakshna Alayam,<br />
+                                        Nagarjuna Nagar,<br />
+                                        Sattenapalli - 522 403. (Guntur Dt.)
+
+
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 92905 55488
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri C. Sivananda Rao,</strong><br />
+                                        Balabhanu Vidyalayam,<br />
+                                        Opp. Old Police Station<br />
+                                        Karempudi - 522 614. (Guntur Dt.)<br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 98858 02104
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri N. Koteswara Rao,</strong><br />
+                                        Retd. Asst. Commissioner of Endowments,<br />
+                                        7-7/1-22,Lawyerpet,<br />
+                                        Ongole - 523 002. (Prakasam Dt.)<br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Phone</strong> : (08592) 281295
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 98666 47294
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri P. Dayaldas,</strong><br />
+                                        17/49, Dronamrajuvari Street,<br />
+                                        Near Sivapriya Lodge,<br />
+                                        Nellore - 524 001.<br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Phone</strong> : (0861) 2328371<br />
+                                        <strong>Cell</strong>
+                                        : 92467 77704
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri P.S.R. Anjaneyulu,</strong><br />
+                                        8-1-487, Sri Ranganayaka Temple,<br />
+                                        Ranganayakulupeta,<br />
+                                        Nellore - 524 001.<br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0861) 2317544<br />
+                                        <strong>Cell</strong>
+                                        : 99630 13804
+
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri R. Venkateswarlu</strong><br />
+                                        Lecturer, C/o. Sri Shiridi Sai Baba Mandiram<br />
+                                        Vidyanagar - 524 413. (Nellore Dt.)<br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 92477 96579
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri M. Srinivasa Kumar,</strong><br />
+                                        C/o. Sri K. Lakshminarayana,<br />
+                                        3-1-3, Natavari Street,<br />
+                                        Kavali - 524 201. (Nellore Dt.)
+
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Cell</strong> : 99482 11937<br />
+                                        <strong>Disp</strong> : 92908 21667<br />
+                                        92473 03700
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri P.V. Ramaniah</strong><br />
+                                        J.R.Pet, 1 line,<br />
+                                        ATMAKUR - 524 322 (Nellore Dt.)
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Cell</strong> : 94906 37762<br />
+                                        99857 33981
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri I.S. Chakrapani</strong><br />
+                                        Lecturer, GVS Memorial High School,<br />
+                                        Malavya Nagar, Gudur - 524 102
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Cell</strong>
+                                        : 94940 90037
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri P.S. Ravi Kumar</strong><br />
+                                        Lecturer, Engineering College,<br />
+                                        201, Balaji Apartment, Varada Nagar,<br />
+                                        Guduru - 524 102. Nellore Dist.,
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Cell</strong>
+                                        : 94411 47857
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri D. Ramulu,</strong><br />
+                                        D/2, NSC Campus Colony<br />
+                                        Khammam - 507 002.
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Phone</strong> : (08742) 229145<br />
+                                        <strong>Cell</strong>
+                                        : 94410 18626
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri A. Vyasamurthy,</strong>
+                                        <br />
+                                        10-153/1, Conductor’s Colony<br />
+                                        Sarapaka - 507 128. (Khammam Dt.)
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Cell</strong> : 98498 20921<br />
+                                        <strong>E-mail </strong>
+                                        : vyasamurthysiddanti@gmail.com
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri A.S.Gopalarao,</strong><br />
+                                        BC-13, Writer Busti,<br />
+                                        Kottagudem - 507 115. (Khammam Dt.)
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Cell</strong>
+                                        : 98662 41504
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri B.V. Ravi Prasad</strong><br />
+                                        16-1-49, Brahmin Street, Opp. Ramprasad Advocate<br />
+                                        New Paloncha - 507 115
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 94416 50886
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri V.L. Narasimha Rao,</strong><br />
+                                        Retd. Dy. C.E.<br />
+                                        Plot No. 64, Siddhardha Colony<br />
+                                        Kapra,<br />
+                                        Secunderabad - 500 062.
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08742) 229145<br />
+                                        <strong>Cell</strong>
+                                        : 94410 18626
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Smt. Y. Bramarambha</strong><br />
+                                        W/o. Y. Ramakrishnayya<br />
+                                        12-2-717/1/50,<br />
+                                        Saptagiri Colony,<br />
+                                        Mehadipatnam, Hyderabad - 500 028.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong>
+                                        : 040 - 23511771
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri G. Tarakeswara Rao,</strong><br />
+                                        Plot No 58-65P & 66P<br />
+                                        Near Sivalayam, Sri Ram Nagar,<br />
+                                        Chintal, Hyderabad - 500 054.
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Cell</strong> : 98485 55891(O)<br />
+                                        96039 77094(R)
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri A. Venkata Rami Reddy</strong><br />
+                                        C/o. Sri Shirdisai Temple, Beside Sridevi Talkies,<br />
+                                        HANAMKONDA<br />
+                                        WARANGAL - 506 001.
+                                </div>
+                                <div class="Half-right">
+
+                                    <strong>Cell</strong> : 94913 18096
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri K.V. Nageswara Rao</strong><br />
+                                        DE-04, APGENCO Colony<br />
+                                        Eegalapenta, Srisailam Dam West - 509 326<br />
+                                        Mahaboob Nagar Dist.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong> : 94906 12531
+                                        <br />
+                                        <strong>Phone</strong>
+                                        : (08524) 247577
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Master E.K. Homoeo Vaidyalayam,</strong>
+                                        <br />
+                                        Mannanur. (Amrabad Mandal).
+                                        <br />
+                                        Mahaboobnagar Dt.
+                                </div>
+                                <div class="Half-right">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri K. Muralidhara Rao,</strong><br />
+                                        Premanilayam<br />
+                                        Opp. Filter House<br />
+                                        Western Colony,<br />
+                                        Srisailam Dam East. (Kurnool Dt.) - 518 102.
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08524) 286133<br />
+                                        <strong>Cell</strong>
+                                        : 94405 46334
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri R. Durga Prasad,</strong><br />
+                                        Advocate, C.V.V. Nilayam<br />
+                                        25/272, Sanjiva Nagar,<br />
+                                        Nandyla - 518 501v
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08514) 244211<br />
+                                        <strong>Cell</strong>
+                                        : 90005 64988
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Smt. M. Meena,</strong><br />
+                                        W/o. Sri M. Mallikarjuna,<br />
+                                        6/305/25/2, Sri Krishna Krupa<br />
+                                        Beside TTD Kalyana mandapam,<br />
+                                        T.G.K. Nagar,Adoni - 518 301.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 99633 36000
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri Y. Rama Gopal,Master Homoeo Clinic</strong><br />
+                                        Sri C. Ramachandrappa,<br />
+                                        No. 6/193, Vidyaranyanagar,<br />
+                                        Kalyanadurgam Road,<br />
+                                        Anantapur - 515 004.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08554) 270004
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 94904 76366
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Sri B. Ravindranadh Gupta,</strong><br />
+                                        Swetadweepam,<br />
+                                        Vijayanagar Colony Road,<br />
+                                        Near Rama Temple,<br />
+                                        Street Opp. to Ramachandra Lodge,<br />
+                                        Tadipatri - 515 411.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08558) 223870
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 98859 37352
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <p>
+                                        <strong>Dr. Y. Manmohan, B.H.M.S.</strong><br />
+                                        C/o. Ramana Kendram, 18-3-24,<br />
+                                        Santhi Nagar (Khadi Colony),<br />
+                                        Kapilatherdham Road,<br />
+                                        TIRUPATHI - 7.<br />
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 73820 66572
+
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr.U.Mohana Rao, B.M.B.S.,</strong><br />
+                                    Block No. E/6,<br />
+                                    Unit 2, New Settlement,<br />
+                                    Kharagpur - 721 301. (West Bengal.)
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 094753 25323
+
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. D. Sree Lakshmi, D.H.M.S.,</strong><br />
+                                    Master E.K. Free Homoeo Clinic, <br />
+
+                                    Near Govt. High School, Tatipaka - 533 249.(E.G.Dt).
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Phone</strong>  : (08862) 221100 <br />
+                                        <strong>Cell</strong>
+                                        :  94412 37604
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. D. Sree Lakshmi, D.H.M.S.,</strong><br />
+                                    Sri Krishna & Veeranna Sommamma Free Homoeo Clinic <br />
+                                    C/o. D. Ammanna Raja, Lakkakulavari St.,<br />
+                                    Near Ramalayam, Madhavaram - 534 145 (W.G.Dt.).
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        :  94412 37604
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri B. Sudarsana Rao</strong><br />
+                                    C/o. A. Indira, Plot No. 42, <br />
+                                    Gayatrinagar, Padmavathi Nagar Road No.2, Dharmapuri Road,<br />
+                                    Vizianagaram - 535002.
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        :   9441798385
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri M. Krishna Reddy</strong><br />
+                                    Qtr. No. 468, P.V. Town Ship  <br />
+                                    Mallaram - 507 125 .
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        :   94943 18989<br />
+                                        99896 64836<br />
+                                        <strong>email</strong> : krishnareddy.madadi1961@gmail.com
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Smt. K. Sarojini</strong><br />
+                                    W/o. Sri <strong>Rajendra Prasad</strong> <br />
+                                    D.No. 5-8-9, Back side of SEC Super Bazar<br />
+                                    Vinobha Colony, 24 Area,<br />
+                                    Yellundu - 507 123.
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        :   94407 87481<br />
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Smt. Y. Bramarambha</strong><br />
+                                    W/o. Y. Ramakrishnayya <br />
+                                    12-2-717/1/50,<br />
+                                    Saptagiri Colony,<br />
+                                    Mehadipatnam, Hyderabad - 500 028.
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone  </strong>
+                                        :   040 - 23511771<br />
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri D. Srinivasulu</strong><br />
+                                    8-2-32/A/3/1, Teachers Colony <br />
+                                    Mahaboob Nagar - 509 002<br />
+                                    Mahaboob Nagar Dist.
+
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell </strong>
+                                        :  99896 26399<br />
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. P. Veda Sushmitha,</strong> B.H.M.S.<br />
+                                    Murphy Nursary Primary School  <br />
+                                    3rd Main Road, Velachery, Chennai.
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell </strong>
+                                        :  089394 19897<br />
+                                        086086 32607
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri S. Saravanan</strong><br />
+                                    8A, Kambar Street, Dhandeeswaran Nagar Extn., <br />
+                                    Velachery, Chennai.
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell </strong>
+                                        :  096770 14060
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+
+
+                        <div id="divcontactpoints">
+
+                            <h4 class="centerinfo-headings">CONTACT POINTS  </h4>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri M.Satyanarayana Murthy,</strong><br />
+                                    B-81, Vidyut Nagar,<br />
+                                    Durg - 491 001.
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0788) 2328518
+                                        <br />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr.C.S. Venkateswarlu, B.Sc., B.M.B.S.</strong><br />
+                                    Dy. Manager (F & A) - NRLDC,<br />
+                                    Powergrid Corporation Ltd,<br />
+                                    18A,Shaheedjeed Singh Sansanwal Marg,<br />
+                                    Katwaria sarai, New Delhi - 110 016.
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (011) 26525256
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 099101 70819
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri Y.Balasubramanyam,</strong><br />
+                                    Rtd. SBI Officer, 3/580-2,<br />
+                                    Sai Bhavana Apartments,<br />
+                                    Near Sri Janaki Ramayya Complex,<br />
+                                    Samadhi Road.<br />
+                                    Puttaparthy - 515 134. (Anantapur Dt.)
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08855) 288533<br />
+                                        <strong>Cell</strong>
+                                        : 94401 15797
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri Gnanananda Swamy</strong><br />
+                                    E-23, Concious Circle, Doshi Garden,<br />
+                                    321, Arcot Road,<br />
+                                    Vadapalani, CHENNAI - 26.
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Cell</strong>
+                                        : 097109 16072
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri G. Ravi Chandra,</strong>
+                                    B-39, CEL Apartments<br />
+                                    Vasundhara Enclave, New Delhi - 1100 96<br />
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 097596 00232<br />
+                                        09717 611533
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+                        </div>
+
+
+
+                        <div id="divpaidclinics">
+                            <h4 class="centerinfo-headings">PAID CLINICS</h4>
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. E.V.M. Acharya, D.H.M.S.,</strong><br />
+                                    Master Homoeo Home,<br />
+                                    48-12-8, E.K. Krishnadweepam<br />
+                                    Prakasam Road,<br />
+                                    Srinagar, Visakhapatnam - 530 016.
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0891) 2748679<br />
+                                        <strong>Cell</strong>
+                                        : 98495 28123
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. Ch. Pavan Kumar, B.H.M.S.,</strong><br />
+                                    Sri Krishna Pavan Homoeo Consultancy<br />
+                                    8-145, Beside Chaitanya School<br />
+                                    Naidu Thota, Visakhapatanam - 530 029.
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 99890 64066
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. R. Phani Bala, BHMS., MD.,</strong><br />
+                                    Sai Phani Krishna Homoeo Clinic<br />
+                                    MIG 160 - Sector - 4, MVP Colony<br />
+                                    Visakhapatnam - 530 017.<br />
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0891) 2711311
+                                        <br />
+                                        <strong>Cell</strong> : 97002 04062
+                                        <br />
+                                        <strong>e-mail</strong>
+                                        : dr.phani.rayapudi@gmail.com
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri R.S. Somanadh,</strong><br />
+                                    APSEB Colony,<br />
+                                    58-20-32, Butchirajupalem<br />
+                                    Visakhapatnam.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0891) 2572095
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 94406 06885
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. V. Saubhgyalakshmi, B.H.M.S</strong>
+                                    <br />
+                                    Medical Officer,
+                                    <br />
+                                    G-1, Vijaya Residency, AKP Road,
+                                    <br />
+                                    Bhalighattam, Narsipatnam - 531 116
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong> : 94902 06519<br />
+                                        98857 54737
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. A.S.Krishna, B.H.M.S,</strong><br />
+                                    Lecturer in Homoeopathy,<br />
+                                    Maharajah Institute of Medical Sciences<br />
+                                    Nellimarla, Vizianagaram.
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 94901 79028
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. M.K.S.S. Prasad, M.B.B.S.,</strong>
+                                    <br />
+                                    Master E.K.Homoeo & Allopathic Dispensary,<br />
+                                    1st Floor, Super Bazar Complex,<br />
+                                    Main Road, Kakinada - 533 001.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0884) 2365603
+                                        <br />
+                                        <strong>Res</strong>
+                                        : 94401 28063
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. T.N. Durgadevi, D.H.M.S.,</strong><br />
+                                    Aswini Homoeo Clinic,<br />
+                                    19-1-385/2, Sudha Colony,<br />
+                                    Near M.R. College, Peddapuram - 533 437. (E.G.Dt.)
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong>
+                                        : (08852) 241500
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. D. Sree Lakshmi, D.H.M.S.,</strong>
+                                    <br />
+                                    Master E.K. & Swami Sivananda Homoeo Clinic,
+                                    <br />
+                                    SBI Street, Beside Yadla Ramarao Hostel,
+                                    <br />
+                                    Razole . (E.G.Dt.)
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08862) 221100
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 94412 37604
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr.N. Srikanth,</strong> B.H.M.S.,<br />
+                                    <strong>Dr. A.Raja Sekhar,</strong> B.H.M.S.,<br />
+                                    Hahnemann Homoeo Consultancy,
+                                    <br />
+                                    46-12-19/1A, Danavaipeta, III Lane, Near Phanindra Caning Centre
+                                    <br />
+                                    Rajahmundry - 533 103.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong> : 98853 93553
+                                        <br />
+                                        90593 38611<br />
+                                        94404 19123
+                                        <br />
+                                        <strong>Phone</strong> : 0883 - 2441244
+                                        <br />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr.G.Kondala Rao</strong> B.H.M.S.,<br />
+
+                                    Kent Homoeo Consultancy, Near Food Ex,<br />
+                                    Sivalayam Street, T. Nagar, Kotipalli Bus Stand Centre,<br />
+                                    Rajahmundry - 533 101.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong> : 98660 71988
+                                        <br />
+                                        90596 08328<br />
+                                        <strong>email</strong> : drraohomoeo@gmail.com
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. N.S.R.V.Prasada Rao,</strong> B.V.Sc& A.H.,<br />
+                                    Retd. Asst. Director Of Animal Husbandary,<br />
+                                    Gaigolpadu Junction, Vijaya Gardens,<br />
+                                    Kakinada - 533 003.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0884) 2374904
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 93933 63039
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. V.Kiran Kumar,</strong> B.H.M.S.,<br />
+                                    Sri Krishna Yati Homoeo Consultancy,<br />
+                                    Over bridge Down, Opp. Seerla Brahmayya Petrol Bunk,<br />
+                                    Narasimharaopeta, Eluru - 534 006.<br />
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong> : 98666 16702
+                                        <br />
+                                        <strong>Stores</strong>
+                                        : 94416 44621
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. T.Vamsikrishna,</strong> B.H.M.S.,<br />
+                                    Sri Krishnavamsi Homoeo Consultancy,<br />
+                                    26/299, Opp. Dr. Saiprasad Hospital<br />
+                                    Buttayipeta, Machilipatnam - 521 001.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell </strong>: 98666 37617
+                                        <br />
+                                        <strong>Stores</strong>
+                                        : 98668 13422
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. M. Narendra,</strong> M.D. (H).,
+                                    <br />
+                                    Satyapoorna Homoeo Clinic, Shop No. 8,<br />
+                                    Hilton Towers, Beside Apsara Talkies
+                                    <br />
+                                    Governorpet, Vijayawada - 520 002.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0866) 2575990
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 98494 90440
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. S.G.M. Varma,</strong> B.H.M.S.,
+                                    <br />
+                                    Sri Maitreya Krishna Homoeo Clinic
+                                    <br />
+                                    29-13-29, Kaleswara Rao Road,
+                                    <br />
+                                    Beside Indian Bank, Suryaraopeta,
+                                    <br />
+                                    Vijayawada - 520 002.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0866) 2441189
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 93910 10101
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. V. Sree Geetha,</strong> B.H.M.S.,
+                                    <br />
+                                    Sri Krishna Maitreya Homoeo Clinic
+                                    <br />
+                                    # GF-2/1, Lohiya Towers
+                                    <br />
+                                    Nirmala Convent Road,
+                                    <br />
+                                    Vijayawada - 522 010.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0866) 2479699
+                                        <br />
+                                        <strong>Cell</strong> : 97032 86861
+                                        <br />
+                                        <strong>e-mail</strong>
+                                        : sri_vaddi2003@yahoo.com
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. D. Kodanda Ram Reddy,</strong> B.H.M.S.,
+                                    <br />
+                                    Sri Ramakrishna Homoeo Consultancy<br />
+                                    5-60-2/17, Ashok Nagar,
+                                    <br />
+                                    Guntur - 522 007
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone </strong>: (0863) - 2222566
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 81214 94438
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. K. Sri Devi,</strong> B.H.M.S.,
+                                    <br />
+                                    Sri Krishnapriya Homoeo Clinic,<br />
+                                    16-21-16, Sri Pamchamukha Anjaneyaswamy Temple Street,<br />
+                                    Sharoff Bazar, Tenali - 522 201.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell </strong>
+                                        : 94404 34046<br />
+                                        <strong>Ph</strong> : 08644 - 226642
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. N. Arunakumari, </strong>D.H.M.S.,
+                                    <br />
+                                    Viswasanthi Homoeo Clinic,<br />
+                                    11-16-23B, Beside RTC Garage,<br />
+                                    Near Sai Baba Temple, Kavali - 524 201.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (08626) 242707<br />
+                                        <strong>Cell</strong>
+                                        : 98491 95315
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. V.V.Sri Latha,</strong> B.H.M.S.,
+                                    <br />
+                                    Sri Krishna Chaitanya Homoeo Clinic,<br />
+                                    6-3-596/27, Road No. 7,
+                                    <br />
+                                    Sri Venkata Ramana Colony,
+                                    <br />
+                                    Khairtabad West, Hyderabad - 500 004.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone </strong>: Res (040) 23393211
+                                        <br />
+                                        <strong>Cell </strong>
+                                        : 92916 06080
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. R. Subha Lakshmi, </strong>B.H.M.S.,<br />
+                                    Sri Krishna Subha Homoeo Clinic<br />
+                                    W/o. Sri R. Nagendra, Plot No. 30,<br />
+                                    D.No. 2-22-187, Near Sathavahana High School,<br />
+                                    Jaya Nagar, Kukkatpalli, Hyderabad - 500 072
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 94410 89611
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. G. Saudamini,</strong> B.H.M.S.,
+                                    <br />
+                                    Sri Krishnaprabha Homoeo Clinic,<br />
+                                    Flat No. 106, Jayabharathi meadows,<br />
+                                    Suchitra Centre, New Jeedimetla,<br />
+                                    Hyderabad - 500 055.
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone </strong>: (040) 27230740
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 99595 89105
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. Ch.Sumanth Kumar,</strong> B.H.M.S.,<br />
+                                    Sai Krishnateja Homoeo Clinic,<br />
+                                    Plot No. 61/A, Opp. More Super Market,<br />
+                                    Vengalarao Nagar, Hyderabad - 500 038.
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell </strong>
+                                        : 98492 72193
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. Anitha </strong>B.H.M.S.,
+                                    <br />
+                                    <strong>Dr. Pavani </strong>B.H.M.S.,
+                                    <br />
+                                    Srikrishna Guru Homoeo Clinic
+                                    <br />
+                                    Plot No. 102/B, First Floor
+                                    <br />
+                                    Near Nagarjuna High School, Rajiv Nagar,
+                                    <br />
+                                    Hyderabad - 500 045.
+                                    <br />
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell </strong>: 96768 65249
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 92465 33703
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. M.V.Rama Aparna,</strong> B.H.M.S.,
+                                    <br />
+                                    Sri Krishna Aparna Homoeo Clinic<br />
+                                    H/o. Sri. B. Rama Rao, 7-3-149,<br />
+                                    Gattayya Centre, Dwaraka Nagar,<br />
+                                    Near Johnsons Kids School,<br />
+                                    Khammam - 507 002.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong>
+                                        : 94912 95665
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. Y. Manmohan, </strong>B.H.M.S.,
+                                    <br />
+                                    Sri Venkata Krishna Homoeo Home,
+                                    <br />
+                                    18-1-551A, Bhavaninagar,
+                                    <br />
+                                    Street Opp.to Bank of Baroda, Tirupathi - 517 507.
+                                    <br />
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : (0877) 2230317
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 93939 93315
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. Y. Raja Sekhar,</strong> M.D.,(Homoeo)
+                                    <br />
+                                    Sai Krishna Homoeo Specialities
+                                    <br />
+                                    43/326, NRpeta, Opp. Chiranjeevi Park,
+                                    <br />
+                                    Kurnool - 518 004.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong> : 94400 40192
+                                        <br />
+                                        <strong>Res </strong>
+                                        : (08518) 253248
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. M. Anitha,</strong> B.H.M.S.,
+                                    <br />
+                                    H.No. 43, 2nd Floor, 3rd ‘A’ Cross,<br />
+                                    P.R. Layout, Munnekolalu, Marthahalli<br />
+                                    Bengaluru - 560 037.
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone</strong> : 080 - 25227879
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 082773 36092
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. D. Maheswari,  </strong> B.H.M.S.,<br />
+                                    Sri Krishna Eswari Homoeo Clinic<br />
+                                    12-1-103/1, Lalapeta,<br />
+                                    Secunderabad - 500 017.
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+
+                                        <strong>Cell</strong>
+                                        :  94410 18646
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. Jahnavi,</strong> B.H.M.S.,
+                                    <br />
+                                    Flat No. 204, Green Elegance Apts.<br />
+                                    No. 114/1, Opp. Adarsh Villas, Bhoganahalli,<br />
+                                    Doddakkanahalli Main Road, Bengaluru.
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+
+                                        <strong>Cell</strong>
+                                        :  078292 37243
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                        </div>
+
+                        <div id="divastrologicalcentre">
+                            <h4 class="centerinfo-headings">ASTROLOGICAL CENTRES</h4>
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri E. Srinivas,</strong> M.A., M.A., (Astrology)
+                                    <br />
+                                    7-141/4, Master CVV Nilayam
+                                    <br />
+                                    WT Housing Colony
+                                    <br />
+                                    China Mushidivada, Perndurthy
+                                    <br />
+                                    Visakhapatnam - 530 051.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone </strong>: (0891) 2756282
+                                        <br />
+                                        <strong>Cell </strong>: 94405 61944
+                                        <br />
+                                        81437 77302
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Dr. I. Srinivasa Rao,</strong> M.A.,Ph.D.,
+                                    <br />
+                                    Reader in Sanskrit,
+                                    <br />
+                                    Plot No. 49, D.No. 54-20/6-10,
+                                    <br />
+                                    Road No. 3, Kanakadurga Gazetted Officers Colony
+                                    <br />
+                                    Vijayawada - 520 008.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Phone</strong> : (0866) 2545866
+                                        <br />
+                                        <strong>Cell </strong>
+                                        : 98493 14952
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri K.V.Kumar,</strong> B.Sc., B.L.,<br />
+                                    Advocate, 47-7-14/10,<br />
+                                    C-1, Satya Enclave, Dwarakanagar,<br />
+                                    Visakhapatnam - 530 016.
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone </strong>: (0891) 2748228
+                                        <br />
+                                        <strong>Cell :</strong>
+                                        99482 36539
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri P.S. Ramesh</strong> M.A., (Astrology)
+                                    <br />
+                                    C/o. Sri V. Sai Baba<br />
+                                    Balimarthimvari Choultry, 6/3 Arundelpet<br />
+                                    Guntur.
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong> : 99899 24657
+                                        <br />
+                                        <strong>e-mail </strong>
+                                        : puranam1@gmail.com
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri N.V.Venumadhav,</strong> M.A., (Astrology)
+                                    <br />
+                                    6-3-596/27, Road No. 7,<br />
+                                    Sri Venkataramana Colony,<br />
+                                    Khairatabad West, Hyderabad - 500 004.
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone </strong>: Off (040) 23393211, Cell : 94404 47475<br />
+                                        <strong>Res</strong> : 23393311<br />
+                                        <strong>E-mail </strong>: venuastro@gmail.com<br />
+                                        venuastro@ymail.com<br />
+                                        venuastro@mail.com
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Smt. Y.Sunitha,</strong> M.Com., M.A., (Astrology)<br />
+                                    Aswini Astrological Consultations,<br />
+
+                                    E.K. Dweepam, 5-318/6, Gayathri Nagar,<br />
+
+                                    Near Sri Padmavathi Mahila University,<br />
+
+                                    Tirupathi - 517 502.
+
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell</strong> : 99482 96539
+                                        <br />
+                                        <strong>Phone </strong>
+                                        : (0877) 2244525
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+
+                        </div>
+
+
+                        <div id="divspiritualcenter">
+                            <h4 id="spirituaval" class="centerinfo-headings">
+                                SPITIRUAL CENTRES
+                            </h4>
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Mother ( Mrs. E.K.),</strong>
+                                    <br />
+                                    Swetadweepam, Chinamushidiwada (B.O.)<br />
+                                    Visakhapatnam - 530 051.
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Phone </strong>
+                                        : (0891) 2764273
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri Kotta Subba Rao</strong>
+                                    <br />
+                                    Chinakakani, Mangalagiri Post.<br />
+                                    (Guntur Dist).
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Cell </strong>: 91774 66414
+                                        <br />
+                                        <strong>Phone</strong>
+                                        : (08645) 248286
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri M.Sitaram,</strong>
+                                    <br />
+                                    Mumukshujana Mahapeetham,<br />
+                                    Sri Krishna Ashramam,<br />
+                                    Pedamuttevi. (B.O.) (Movva Mandalam)<br />
+                                    Krishna Dist - 521 136.
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+                                        <strong>Phone</strong> : (08671) 256270, 256080
+                                        <br />
+                                        <strong>Email </strong>
+                                        : srithilaya@gmail.com
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                            <br />
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri Ramanandaji Maharaj,</strong><br />
+                                    Bhaktavatsalya Ashram<br />
+                                    Annapoorna Road, Rajendra Nagar,<br />
+                                    Indore (M.P)
+                                </div>
+                                <div class="Half-right">
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+
+
+                        <div id="divswetadweepammagazine">
+                            <h4 class="centerinfo-headings">SWETADWEEPAM - MAGAZINE</h4>
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri P. Ramachandra Rao</strong>
+                                    <br />
+                                    Plot No. 7/2, 184/2, Sujatha Nagar (PO)<br />
+                                    W.T. Housing Colony, Chinamushidivada,<br />
+                                    Visakhapatnam - 530 051.
+
+
+
+
+
+                                </div>
+                                <div class="Half-right">
+
+                                    <strong>Phone </strong>: (0891) 2764533
+                                    <br />
+                                    <strong>Cell </strong>: 94415 78445
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                        </div>
+
+                        <div id="diveducationalinstitution">
+
+                            <h4 class="centerinfo-headings">EDUCATIONAL INSTITUTIONS</h4>
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Master E.K. Vidyalayam,</strong><br />
+                                    Vidyanagar Colony,<br />
+                                    Kothagudem - 507 101.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone </strong>: (08744) 241949
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 98662 45487
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Master E.K. Vidyalayam,</strong><br />
+                                    Srinagar Colony,<br />
+                                    Kothagudem - 507 101.<br />
+
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone </strong>: (08744) 240303
+                                        <br />
+                                        <strong>Cell</strong>
+                                        : 93999 34930
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Master E.K. Vidyalayam,</strong><br />
+                                    C/o. Prema Nilayam, Opp. Filter House,<br />
+                                    Western Colony, Srisailam Dam East - 518 102<br />
+                                    Kurnool Dist.,
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Phone </strong>: (08524) 286133
+                                        <br />
+                                        (Sri Sasidhara Sai Prasad) <strong>Cell</strong>
+                                        : 94407 29470
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+
+                        </div>
+
+                        <div id="divwebsiteandcds">
+                            <h4 class="centerinfo-headings">WEBSITE & C.D.’S</h4>
+
+
+                            <div class="adress">
+                                <div class="Half-left">
+                                    <strong>Sri G. Phani Srinivas</strong>
+                                    <br />
+                                    Cell : 98858 01109
+
+                                    New M.E.K. Solutions,<br />
+
+                                    D.No. 8-3-167-R-102/B,<br />
+
+                                    1st Floor, Rajiv Nagar,<br />
+
+                                    Hyderabad - 500 038.
+
+                                </div>
+                                <div class="Half-right">
+                                    <p>
+
+                                        <strong>Cell </strong>: 98858 01109<br />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+
+            </ion-content>
+        </ion-view>
+    </script>
+
+    <!-- About Masters -->
+    <script id="templates/aboutmasters.html" type="text/ng-template">
+        <ion-view view-title="About Masters" ng-controller="aboutmasterscontroller">
+      
+            <!--<ion-content class="padding">-->
+                <!--<img src="images/masterek banr.png" style="width:100%; margin-top:5px;" />-->
+                <!--<div class="content-wrapper">-->
+                    
+                        <ion-slide-box show-pager="true" on-slide-changed="slideHasChanged($index)">
+
+                            <ion-slide style="padding-top:62px;overflow-y:auto;background-color:#fff3ca">
+                                <img src="images/masterek banr.png" style="width:100%; margin-top:-10px;border-radius: 15px;border: 3px solid;border-color: #FAFAFA;" />
+                                <div class="page-views pviews">
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Wisdom is impersonal. It is inherent in nature. It is universal and eternal. No one can claim to be the author or owner of the wisdom.
+                                        Real wisdom is a revelation and not a result of logic. It is one of the rays of Divinity.
+                                        True wisdom establishes the integral unity of the universe and the correspondence between the macrocosm and the microcosm.
+                                        The goal of revelation of wisdom is one's identification with the Universal Spirit and living as indweller of all.
+                                        There is some intelligence in space that are the custodians of the true wisdom, like Narada, Vasishta, Viswamitra etc.
+                                        Millions of years ago some of them took human forms on the earth and compiled the revelations of wisdom dawned upon them from the Indwelling Light, the One in all.
+                                        Such records of compilations are called THE VEDAS.
+                                    </p>
+
+
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pure Love is another ray of Divinity. To love all as "I AM" is called Pure Love or the highest form of love, which is otherwise, called Devotion.
+                                        Life becomes Divine and blissful, if one enjoys always the embrosia of pure love, which leads man to the Divine Light. Nature abounds with this love.
+                                        As such Love is the law of Nature. It is the essential quality of every being.
+                                        Whenever the ageless wisdom is lost, i.e., the human mind is incapable of receiving its focus and Law of Nature is violated on a mass scale and the unlawfulness
+                                        gains upper hand, The Universal Spirit, which is otherwise called The World Teacher, descends on the earth. Five thousand years ago such a descent occurred on
+                                        the earth in a perfect form, namely, Lord Krishna. While Krishna was about to leave His physical body, He willed to keep His Divine Consciousness in Lord Maitreya
+                                        until end of the present iron age (Kali Yuga), and through the vehicle of Maitreya, He planned to establish Law on the earth and hence initiated Maitreya into
+                                        the integral whole of the Wisdom of the Universe. Thus Maitreya, who is otherwise known as The Christ, became the World Teacher and the chief custodian of the
+                                        Eternal Divine Wisdom.
+                                    </p>
+
+
+
+
+                                </div>
+                               
+                            </ion-slide>
+                            <ion-slide style="padding-top:62px;overflow-y:auto;background-color:#fff3ca">
+                                <img src="images/masterek banr.png" style="width:100%; margin-top:-10px;border-radius: 15px;border: 3px solid;border-color:#FAFAFA;" />
+                                <div class="page-views pviews">
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Under the stewardship of Lord Maitreya, some other seers (Rishis), who got liberated from the obligation of attaining physical bodies and dedicated themselves to the
+                                        noble goal of resurrection of humanity into Divinity and the establishment of universal brotherhood on the basis of oneness of the Spirit in all, have been working
+                                        day and night. They are called Masters of Wisdom. Their main abodes or centers of work are the caves of Kalapa and Shamballa in the Himalayas. These are the centers
+                                        of their creative work. Masters work in groups with invisible, and at times visible bodies. They promote the evolution of human beings on the earth. As they are all
+                                        liberated souls, according to their will, they take human forms as different individuals at different times in different countries and have been working hard for
+                                        the sake of the spiritual progress of the humanity on the lines cooperation with the evolution of the earth. Further, they dilute and reduce the karma of the races.
+                                        Some of them are known as Master Morya, Master Kuthoomi, Master Seraphis, Master Jesus and Master Djwalkhul(D.K). During the last century they re-opened the school
+                                        of divine wisdom with the help of the theosophical movement led by Madam H.P.Blavatsky who devoted her life to the work of the Masters. Master's work is above the
+                                        limitations of the borderlines of the nations and transcends the barriers of race, cult, religion, sect, etc., and belongs to the whole of humanity.
+                                    </p>
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Blue Mountains (Nilgiris) in South India also is another secret center of the creative work of the Masters. The celebrated sage Agastya graces the place with his
+                                        presence. He has been cooperating with the above mentioned Theosophical Masters, staying at the same place. He has formulated the relationship between the influence
+                                        of planets and the evolution of man. He has bridged yoga, the path of synthesis and the ageless wisdom of the Masters. Under the radiant influence of the sage
+                                        Agastya, another Master took incarnation with the energies of sign Aquarius in 1868 at Kumbhakonam in South India. He attained the highest experience of God the
+                                        indweller. He is called Master CVV. Master CVV: He was born in a traditional family. He was brought up according to the ancient traditions, became an ideal
+                                        householder and was a very sociable person. In the year 1910, the light of Haley's Comet entered into his room at mid night while he was in meditation and through
+                                        this he received the energies of the Supreme and started the work of his descent. He attained Mastery over all his vehicles was able to peep into the details of our
+                                        solar system and propounded a programs for the sake of the spiritual expansion of the present humanity on 29th May 1910. The higher energy worked out a connection
+                                        with his programs. After the descent of that light into him, merely with his grace though his look he could impregnate his wife through which a Divine being came
+                                        into incarnation that was named as Chandu. It was an immaculate conception. This child was the guide to Master CVV. He lived only a short period in his physical
+                                        body and left it after completing his purpose with Master CVV. CVV awakened the sound waves working in the magnetic field of the earth with the mystic key
+                                        syllables, viz.,CVV and arrange the direct link between the individual Kundalini and the cosmic Kundalini which is nothing but the energy of God with the help of
+                                        which He brought about the creation. Master CVV carved out a design of synthesis Of all the planes of consciousness of man and aimed at the perfection of every atom
+                                        in the human constitution. He renovated eternal path of synthesis that is based on total surrender of oneself to the Master and his work and keep witnessing the mind.
+                                        Master CVV has preserved his etheric body immortally to guide his followers through ages and births and transform them into himself, no other than the all-pervading
+                                        spirit. There is no place for individual liberation in the programme of Master CVV. His path envisages the descent of Divine immortality to the earth and the earthly
+                                        life of every man on it. Every vehicle in the human constitution, commencing with the gross physical body onto his subtler intellect is meant for purification.
+                                        Master CVV selected some disciples as his mediums through whom he has been proceeding to expand his work and externalise his plan.
+                                    </p>
+
+                                </div>
+                            </ion-slide>
+                            <ion-slide style="padding-top:62px;overflow-y:auto;background-color:#fff3ca">
+                                <img src="images/masterek banr.png" style="width:100%; margin-top:-10px;border-radius: 15px;border: 3px solid;border-color: #FAFAFA;" />
+                                <div class="page-views pviews">
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sri Veturi Prabhakara Sastry (Master VPS) and Sri Mainampati Narasimham (Master MN) were the foremost of the mediums of Master CVV. They healed thousands of people
+                                        from their ailments sufferings and energised their bodies by invoking Master CVV in prayer. Further, they moulded the lives of thousands of persons on the lines
+                                        prescribed by their Master. Even after leaving his mortal frame in 1922,Master CVV has been continuing his work through some pure souls who dedicated their lives
+                                        for the Universal perfection and gave the presence of the Master to their associates. One such noble souls was Sri Kotha Ramakotiah, the devoted disciple of Master
+                                        VPS, who not only healed many sick people, but spread the path of Master CVV.
+                                    </p>
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Master EK: There are seven keys to attain the experience of Yoga Consciousness, according to the Masters. Yet only three keys are possible to be revealed in books.
+                                        Those three were presented in the book "The Secret Doctrine" written by Madam H.P.Blavatsky, who unlocked to some extent the treasure of wisdom in the present age.
+                                        Master CVV promised to reveal the remaining four keys to his mediums from time to time. There is a harmonious relationship between the work of the theosophical Masters
+                                        and Master CVV.
+                                    </p>
+
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the earlier decades of this century, materialism and spiritualism were at crossroads. Both were growing at the cost of each other. Science and religion were pointing
+                                        guns at each other. Life took a turn of gross commercial way at the risk of loss right human relationships. In the name of yoga, fake paths came to the front. The earth
+                                        needed gravely the descent of a Divine person who was able to reconcile the science of matter and the science of spirit and who was able to offer the taste of the nectar
+                                        of universal love and lead the humanity on the roads of true spiritual progress which has nothing to do with religion and it’s narrow limitations. At the crucial juncture
+                                        of the life of the globe, Ekkirala Krishnamacharya (Master EK) was born at Bapatla in Guntur district of Andhra Pradesh, the southern state of India on 11th August, 1926.
+                                        He was fortunate enough to have inherited the parentage of a modern seer, Dr. E.Anantacharya and a deep devotee, Butchamma.
+                                    </p>
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dr.Anantacharya was a seer of the Vedas and all the occult sciences. He probed thoroughly into the ancient wisdon with his seerly and original insight, without the help of
+                                        any commentaries. The ancient wisdom threw it's light on his intution. He lived a perfect yogic life. He carved out Ayurveda, The science of longevity, from the direct
+                                        source of the Vedas and healed thousands of people with his misterious way of treatment. He imparted the wisdom of the Vedas and Occult sciences like Astrology, Ayurveda etc.,
+                                        to his sons and disciples. Krishnamacharya received yogic training from his father in his childhood. He grew as an illustrious son of the illustrious father. He was named
+                                        after Lord Krishna by his father since he was born at the time when Anantacharya was making a special study of the Bhagavadgita. At a very early age, he mastered all the
+                                        subjects modern and ancient. The core of every subject was unveiled to him. In addition he viewed the wisdom with all its branches in the light of application and usefulness
+                                        to the humanity. He was a good admixture of pure idealism and strict pragmatism. He began his career as a professor of Telugu, his mother tongue, in a college at Guntur.
+                                    </p>
+
+
+                                </div>
+                            </ion-slide>
+                            <ion-slide style="padding-top:62px;overflow-y:auto;background-color:#fff3ca">
+                                <img src="images/masterek banr.png" style="width:100%; margin-top:-10px;border-radius: 15px;border: 3px solid;border-color: #FAFAFA;" />
+                                <div class="page-views pviews">
+
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Master E.K. conducted instructional classes in the science of Homoeopathy and trained hundreds of persons in this healing art. Many of the patients who approached
+                                        him for healing were transformed into healers by him. He was not only an exponent of spiritual healing but also an adept in that art. He founded New Era Healing,
+                                        the healthy combination of all the scientific branches of healing in the world, the special importance to their application according to the need of the sick.
+                                        He has established many healing centers where many suffering and sick people are healed everyday. He established a harmonious connection between the teacher and the
+                                        student, the healer and the sick, the employer and the employee, the parent and the child. He created an affectionate bond between the above mentioned pairs.
+                                    </p>
+
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;He imparted the wisdom of the orient and the occident to thousands of aspirants and guided their lives on the lines of spiritual progress. Many families began to adore him
+                                        like a parent, guide, teacher, friend, saviour and everything. He wrote commentories on some of the Vedic rhymns, Upanishads, Bhagavadgita, The Yogasutras of Patanjali and
+                                        finally the great Indian epic Bhagavatha, the store house of knowledge of creation and the guiding light for spiritual aspirants. The depth of his knowledge is like that of
+                                        an ocean. On withstanding this, his style is very lucid. The reader is blessed with his Devine presence, which is a very blissful experience. Anyone who peeps into his
+                                        writings gets the experience of love and bliss. He was a celebrated poet and can be placed besides the seer-poets of the orient like Valmiki, Vyasa and Kalidasa, and of the
+                                        occident like Homer, Milton and Shakespeare. He wrote matchless epics on the life of Lord Krishna in prose and poetry, which are classic works. All his works present solutions
+                                        to the problems of the human race of all times. He wrote most authentic works in the science of Ayurveda, Homoeopathy, Astrology, Yoga etc., which can satiate the thirst of
+                                        knowledge seekers as well as the needy common people. He explored into the synthesis among the allegories in the Vedas, the Hebrew and Chaldean literature, the Bible and the
+                                        Zend Avesta. He re-established the one eternal and universal law which was masked by the formal religions, leading the pace to one religion i.e., wisdom religion. He narrated
+                                        a number of parables like Jesus Christ to enlighten the path to the common man. His dictum is precise, concise, sweet and practical. His speeches were impregnated with subtle
+                                        humour and compassion. They were conversational in style. He touched the human hearts with his teachings and sowed the seeds of spirit of Love and Service.
+                                    </p>
+
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coming to his work on education, he toiled to rebuild the ancient type of education that created a touchy rapport between the teacher and the disciple. He tried to develop
+                                        creative genius among children. He visualised the education in the new age and envisaged the all round development of body, intellect and soul. Master E.K. was equipped with
+                                        the knowledge of the history of the globe.
+                                    </p>
+
+                                </div>
+                            </ion-slide>
+                            <ion-slide style="padding-top:62px;overflow-y:auto;background-color:#fff3ca">
+                                <img src="images/masterek banr.png" style="width:100%; margin-top:-10px;border-radius: 15px;border: 3px solid;border-color: #FAFAFA;" />
+                                <div class="page-views pviews">
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; His insight was so deep that he was able to understand the present world crisis fully. He investigated into the problems pertaining to economic, political, social,
+                                        cultural, and all other fields in all the countries thoroughly and further studied various ideologies founded by socio economic scientists like Rosseau, Rusky, Karl
+                                        Marx etc., In addition, he appreciated the philosophies of John Ruskin, Emerson, Tolstoy, Aurobindo, Mahatma Gandhi etc. He discovered the problems caused by the fake
+                                        modern civilisation dated from the industrial revolution that occurred in England. Finally, he presented a single medicine to cure all the maladies disturbing all
+                                        the fields. He propounded a socio economic structure on the foundation of spiritual oneness. He gave a call to the present day people groping in the darkness of
+                                        unrest due to grave thirst for mental uplift, to go for retreat to rural areas and form themselves as one social unit. He designed mutual co-operation in the place
+                                        of competition. He warned the people regarding the forthcoming danger to the future of the earth and life on the earth resulting from over-urbanisation. He proposed
+                                        de-urbanisation and living in the cummunion with nature. There are many philosophies and spiritualists who interpreted the world as an illusion and cautioned the
+                                        people against the evils caused by believing its reality. At the other end , there are pseudo-scientists who took the material world to be an absolute reality.
+                                        But Master E.K. was one who comprised both the ends and presented the world's true structure as the manifested form of Divinity and a relative reality. Further,
+                                        he presented the way for it's transformation on the path of evolution and galvanised the youthful energies of a large number of adults to work as world-servers
+                                        and formed a team of servers for world good will. He rose to the occasion in the present Aquarian age. He preached what he lived. His life is his gospel. He lived
+                                        as an universal man. He gave a rousing call for Cultural Revolution.The sore feelings of any person due to worry, sickness, hunger etc., living in the nook and corner
+                                        of the world reverberated in his heart like ringing bells in a temple. He never rested until the tears of a sad person were removed and washed away. Verily, his
+                                        heart was a temple of God in man and a mineature universe. He sought for group-living and promulgated the doctrine of pure love on a cosmic scale. He patiently
+                                        forbore many difficulties in his life and withstood all the material odds and never went back from the continuity of his purpose under any circumstance. He never
+                                        discarded his family. He was not a monk. He was a highly responsible house-holder. He was an ideal and humble son, an affectionate elder brother, a loving husband,
+                                        a noble father, a parentally teacher, a healer with motherly love, a preacher of the age and the prophet for all times. He visualised that one day man will be
+                                        transported into space by means of prayer and also all men live like component atoms in the universal body of the All-Merciful God. No subject and no discipline
+                                        old or new could escape his attention. No field escaped his purview. He was, by himself, an institution. Master E.K shouldered the work of bringing about fusion
+                                        of the East and the West. In 1972, the spiritual disciples of Albert Sassi, his spiritual colleague in Belgium invited him to deliver lectures on spiritualism and
+                                        yoga. Since then, Master went round the globe seven times. He inculcated the values of yoga in the hearts of the western brothers and magnetised them with his love.
+                                        He appreciated the positive aspects of both the east and west and harmonised them. He initiated groups of world servers in European countries like Belgiun,
+                                        Switzerland, France, Germany and Italy. They felt the presence of Master C.V.V. in his company. He kindled the lamp of love and wisdom in their hearts.
+                                        The cultural gap between the east and west has been reduced as a consequence of his work. He sacrificed his life and health for world peace. His mission was
+                                        bridging the east and west, the indwelling spirit in both being the same and bestowing bliss on them. He established healing and educational centers in the west.
+                                        He never expected any thing in return from them. It is due to the mystic work of Masters like E.K, that the hearts of people of different countries are coming
+                                        close to one another. Mutual understanding is growing inspite of the dividing tactics of cheap politicians. Decisions in the fields of statecraft, culture , games,
+                                        education etc., are being gradually moulded in a positive way. Mater is still working in his etheric frame to prevent war and violence in the world.
+                                    </p>
+
+                                </div>
+                            </ion-slide>
+                            <ion-slide style="padding-top:62px;overflow-y:auto;background-color:#fff3ca">
+                                <img src="images/masterek banr.png" style="width:100%; margin-top:-10px;border-radius: 15px;border: 3px solid;border-color: #FAFAFA;" />
+                                <div class="page-views pviews">
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Master E.K never declared that he was a master, as the case with all other Masters. A true master is always concious that he is a messenger of the masters above him
+                                        in the ladder of Hierarchy. He further consciously feels that his followers are his brothers. He never wishes to claim spiritual supremacy over others. Aristocracy
+                                        of any type is never found in him. He is the embodiment of humility and enjoys the position of server. He communicates with the Indweller and not the person.
+                                    </p>
+
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;He lives as love and treats praise and abuse equally. No one's behavior leaves any mark or stamp on a Master's mind . He is free from impressions. He is all experience like
+                                        an infant. He never reacts, but only acts. Exactly to say he does not act. While his consciousness is submerged in the ocean of All-Consciousness, God works through him and
+                                        acts through him. His intellect, mind and senses are immortalised and work as the instruments in the hands of God. Master E.K. used to confess to the people who surrounded
+                                        him that he was a messenger of all the masters and a link between the masters and the aspirants. He never claimed to be the owner of knowledge which flowed through him.
+                                        He is fully conscious that wisdom is the grace of God. We should be cautious of the fake masters in the present age. Master E.K.'s path is a path of inclusion and synthesis
+                                        of all, which is very positive.
+                                    </p>
+
+                                    <p>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Master E.K. used to conduct the congregations of spiritual aspirants twice or thrice at fixed places on fixed dates every year for three days. Thus, he provided training in
+                                        group living and brotherhood. Later, he extended the duration of group living for a period of fifteen days. He left his mortal frame in 1984. His life was glorified like
+                                        a flower submitted to the altar of omnipresent God. Master E.K. is immortal. His presence is still felt by his true followers. He remains for ever, like polestar guiding the
+                                        generations to come on the lines of spiritual perfection and training them to live like the rays of the radiant central spiritual sun.
+                                    </p>
+
+                                </div>
+                            </ion-slide>
+                           
+                        </ion-slide-box>
+                    
+              <!--</div>-->
+               
+            <!--</ion-content>-->
+            <!--<ion-footer-bar class="bar-assertive" style="padding-bottom:55px; position:fixed; bottom:0px; right:0px;z-index:100;width:auto">
+                <ion-slide-box show-pager="true" style="position:fixed"></ion-slide-box>
+            </ion-footer-bar>-->
+            <!--<div class="bar bar-footer bar-assertive" style="padding-bottom:54px;z-index:-1;background-color:#ccc">
+
+
+            </div>-->
+          
+        </ion-view>
+       
+
+    </script>
+
+
+    <!-- Events  -->
+
+    <script id="templates/events.html" type="text/ng-template">
+        <ion-view view-title="Events" class="backgroundohm">
+            <ion-content class="padding">
+                <div ng-controller="eventscontroller">
+                    <div ng-repeat="d in try.Table" ng-hide="Isevents">
+                        <!--<div class="card">-->
+                        <div class="item item-text-wrap border2px" style="background-color:#F7F4F3;">
+                            <ion-header-bar>
+                                <div class="bar bar-header bar-assertive">
+                                    <b> {{d.EventName}} On {{d.EventDate}}</b>
+                                </div>
+                            </ion-header-bar>
+                            <br />
+                            <br />
+                            <b>Contact Person :</b>{{d.ContactPerson}}<br />
+                            <b>Contact No :</b> {{d.ContactPhone }} <br />
+                            <b>Event Address :</b>{{d.EventAddress }} <br />
+                            <b>Description :</b><span ng-bind-html="d.Description"></span>
+                        </div>
+                        <br />
+                        <!--</div>-->
+                    </div>
+                    <div ng-hide="Noevents">
+                        <ion-content>
+                            <div class="row row-center">
+                                <div class="col">
+                                    <button class="button button-block button-stable">
+                                        <h4 style="color:#FAFAFA;">No Events Found</h4>
+                                    </button>
+                                </div>
+                            </div>
+                        </ion-content>
+                    </div>
+                </div>
+            </ion-content>
+        </ion-view>
+    </script>
+
+
+    <!-- News -->
+
+    <script id="templates/news.html" type="text/ng-template">
+        <ion-view view-title="News">
+
+            <ion-tabs class="tabs-icon-top tabs-secondary">
+                <ion-tab title="Current News" icon="ion-home">
+                    <ion-view title="Current News">
+                        <ion-content class="padding">
+                            <div ng-controller="CurrentNewsController">
+                                <div ng-repeat="d in try.Table" ng-hide="Iscurrentnews">
+
+                                    <a ng-click="getnewsid(d.NewsID);openModal(d.NewsID)">
+                                        <div class="card">
+                                            <div class="item item-text-wrap" style="background-color:#fff3ca">
+                                                <b style="color:maroon;">{{d.NewsTitle}} </b> <br />
+                                                <i style="color:maroon;"> {{d.Description | htmlToPlaintext}}</i> <b style="color:black;">
+                                                    more...
+                                                </b>
+                                                <br />
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div ng-hide="Nocurrentnews">
+                                    <ion-content>
+                                        <div class="row row-center">
+                                            <div class="col">
+                                                <button class="button button-block button-stable">
+                                                    <h4 style="color:#FAFAFA;">No Current News Found</h4>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </ion-content>
+                                </div>
+                            </div>
+                            
+                        </ion-content>
+
+                    </ion-view>
+                </ion-tab>
+                <ion-tab title="Archive News" icon="ion-information">
+                    <ion-view title="Archive News">
+                        <ion-content class="padding">
+                            <div ng-controller="ArchiveNewsController">
+                                <div ng-repeat="d in try.Table" ng-hide="Isarchivenews">
+                                    <a ng-click="getnewsid(d.NewsID);openModal(d.NewsID)">
+                                        <div class="card">
+                                            <div class="item item-text-wrap" style="background-color:#fff3ca">
+                                                <b style="color:maroon;">{{d.NewsTitle}}</b><br />
+                                                <i style="color:maroon;">{{d.Description | htmlToPlaintext}}</i> <b style="color:black;">
+                                                    more...
+                                                </b>
+                                                <br />
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div ng-hide="Noarchivenews">
+                                    <ion-content>
+                                        <div class="row row-center">
+                                            <div class="col">
+                                                <button class="button button-block button-stable">
+                                                    <h4 style="color:#FAFAFA;">No Archive News Found</h4>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </ion-content>
+                                </div>
+                               
+                            </div>
+                           
+
+                        </ion-content>
+
+                    </ion-view>
+                </ion-tab>
+            </ion-tabs>
+
+        </ion-view>
+    </script>
+
+    <!-- Image Gallery -->
+
+    <script id="templates/imagegallery.html" type="text/ng-template">
+        <ion-header-bar style="z-index:0;">
+          
+        
+        </ion-header-bar>
+        <ion-view view-title="Gallery">
+            <ion-tabs class="tabs-icon-top tabs-secondary">
+                <ion-tab title="Current Images" icon="ion-home">
+                    <ion-view title="Current Images" ng-controller="getimgcontroller as gimg">
+
+                        <ion-content class="padding" >
+                            <div style="width:100%; float:left;">
+
+                                <ion-item ng-repeat="d in try.Table" ng-hide="Ishide" class="galloery-album" style="width:30%">
+                                    <div class="bar bar-header bar-assertive" style="height:30px;">
+                                        <h3 style="color:#fff;"> {{d.PhotoEventName}}</h3>
+                                    </div>
+                                    <div ng-click="GetEventimages(d.ImageEventId)" style="height:100px;overflow-y:hidden;">
+                                        <img image-lazy-src="http://www.masterek.org/{{d.ImagePath.substring(1)}}" image-lazy-loader="android" image-lazy-distance-from-bottom-to-load="20" style="width:100%;" class="imggallerygrids">
+                                    </div>
+                                    
+                                </ion-item>
+
+                                <div id="thumb-gallery" ng-hide="Ismage">
+                                    <div class="imagetile" collection-repeat="d in CRimage.Table">
+
+                                        <img style="padding:5px;width:100%"
+                                             ng-src="http://www.masterek.org/{{d.ImagePath.substring(1)}}" ng-click="goToSlide($index)">
+                                    </div>
+                                   
+                               </div>
+                               
+                            </div>
+                            
+                          
+                        </ion-content>
+                        <div ng-hide="btncurrentback">
+                            <button  class="button back-button buttons button-clear header-item float-button" ng-click="goback()">
+                                <i class="icon ion-android-arrow-back"></i>
+                                <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"></span>
+                            </button>
+                        </div>
+                    </ion-view>
+                   
+                </ion-tab>
+                <ion-tab title="Archive Images" icon="ion-map">
+                    <ion-view title="Archive Images" ng-controller="archiveimg as arimg">
+                        <ion-content class="padding" lazy-scroll style="overflow-y:scroll;">
+
+                            <div style="width:100%;float:left;">
+                                <ion-item ng-repeat="d in try.Table" ng-hide="Isahide" class="galloery-album" style="width:30%">
+
+                                    <div class="bar bar-header bar-assertive" style="height:30px;">
+                                        <h3 style="color:#fff;"> {{d.PhotoEventName}}</h3>
+                                    </div>
+
+                                    <div ng-click="GetEventimages(d.ImageEventId)" style="height:100px;overflow-y:hidden;">
+                                        <img image-lazy-src="http://www.masterek.org/{{d.ImagePath.substring(1)}}" image-lazy-loader="android" image-lazy-distance-from-bottom-to-load="20" style="width:100%;" class="imggallerygrids">
+                                    </div>
+                                </ion-item>
+                            </div>
+                            <div id="thumb-gallery" ng-hide="Isamage">
+
+                                <div class="imagetile" collection-repeat="d in ARimage.Table">
+                                    <img style="padding:5px;width:100%"
+                                         ng-src="http://www.masterek.org/{{d.ImagePath.substring(1)}}"  ng-click="goToSlide($index)">
+                                </div>
+                            </div>
+
+                        </ion-content>
+                        <div ng-hide="btnarchiveback">
+                            <button ng-click="goback()" class="button back-button buttons button-clear header-item float-button">
+                                <i class="icon ion-android-arrow-back"></i>
+                                <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"></span>
+                            </button>
+                        </div>
+                    </ion-view>
+                </ion-tab>
+            </ion-tabs>
+        </ion-view>
+    </script>
+
+    <!-- News  Modal -->
+    <script id="news-modal.html" type="text/ng-template">
+        <div class="modal image-modal transparent" ng-click="closeModal()">
+            <ion-modal-view>
+                <div class="bar bar-header bar-assertive">
+
+                    <!--<button ng-click="closeModal()" class="button back-button buttons button-clear header-item float-buttonmodel">
+        <i style="font-size:130%" class="ion-close-round"></i>
+        <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"></span>
+    </button>-->
+                    <div class="buttons">
+                        <i class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></i>
+                    </div>
+                    <h1 class="title">News</h1>
+                  
+                </div>
+
+                <!--<div style="color:#fff;position: absolute; right:55px;top:25px;padding-top: 15px;background:orange;border-radius:50%;width:20px;height:20px;z-index:10000" class="ion-close"></div>-->
+                <ion-content style="background-color:#fff3ca;margin-top:35px;font-weight:500;font-size:110%;">
+                    <div ng-repeat="d in try.Table">
+                        <div style="padding:15px;" ng-if="d.NewsID==getnewsidValue">
+                            <b style="color:maroon;">{{d.NewsTitle}}</b><br />
+                            <b style="color:maroon;"></b> <p style="line-height:1.5;text-align:justify">{{d.FullNews | htmlToPlaintext}}</p>
+                        </div>
+                    </div>
+                </ion-content>
+            </ion-modal-view>
+        </div>
+    </script>
+
+    <script id="image-modal.html" type="text/ng-template">
+        <div class="modal-header">
+        </div>
+        <div class="modal image-modal transparent">
+            <div class="bar bar-header bar-assertive">
+                <div class="buttons">
+                    <i class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></i>
+                </div>
+                <h1 class="title">Current Images</h1>
+
+            </div>
+          
+
+
+                <ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)" >
+                    <ion-slide ng-repeat="d in CRimage.Table" >
+                  
+                        <div ng-if="$index >= (currentSlide-1) && $index <= (currentSlide+1)">
+                            <img ng-src="http://www.masterek.org/{{d.ImagePath.substring(1)}}" class="fullscreen-image" />
+                        </div>
+
+                    </ion-slide>
+                </ion-slide-box>
+      
+           
+        </div>
+    </script>
+
+    <script id="ARimage-modal.html" type="text/ng-template">
+        <div class="modal image-modal transparent">
+            <div class="bar bar-header bar-assertive">
+              
+                <div class="buttons">
+                    <i class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></i>
+                </div>
+                <h1 class="title">Archive Images</h1>
+
+            </div>
+            <ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)">
+                <ion-slide ng-repeat="d in ARimage.Table">
+                    <div ng-if="$index >= (currentSlide-1) && $index <= (currentSlide+1)">
+                        <img ng-src="http://www.masterek.org/{{d.ImagePath.substring(1)}}" class="fullscreen-image" />
+                    </div>
+             </ion-slide>
+            </ion-slide-box>
+        </div>
+    </script>
+
+    <!--this script for radio popup start-->
+    <script id="radiomodal.html" type="text/ng-template">
+
+        <div class="card" style="height:25%;width:200px;background-color:#F57538;margin:auto;margin-top:150px;">
+            <div class="item item-divider" ng-click="closeModal()" style="background-color:#F57538;color:#fff;margin-top:-4px;">
+                Media Options
+                <a class="ion-close-round" ng-click="closeModal()" style="padding-left:32px;"></a>
+            </div>
+            <md-toggle style="width:25px;margin:auto;margin-top:12px;margin-left:58px" ng-model="RadioOn" ng-change="startPlay(RadioOn);"></md-toggle>
+            <br /><br />
+            <md-togglelang style="width:25px;margin:auto;margin-left:58px" ng-model="RadioOff" ng-change="Startlanguage(RadioOff)"></md-togglelang>
+        </div>
+    </script>
+    <!--this script for radio popup end-->
+
+<!--  <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/index.js"></script>-->
+
+</body>
+</html>

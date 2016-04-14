@@ -1,0 +1,16 @@
+{
+  "changedFilesIos": [
+    "config.xml",
+    "res\\native\\android\\ant.properties",
+    "build.json"
+  ],
+  "deletedFilesIos": [],
+  "addedPluginsIos": [
+    "org.apache.cordova.media@0.2.13"
+  ],
+  "deletedPluginsIos": [],
+  "changedFiles": [],
+  "deletedFiles": [],
+  "addedPlugins": [],
+  "deletedPlugins": []
+}

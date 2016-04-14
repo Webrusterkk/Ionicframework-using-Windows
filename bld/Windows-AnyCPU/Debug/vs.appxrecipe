@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>NEWMEKSOLUTIONS</Machine>
+    <WindowsUser>Krishna Kishore</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows 8.1</TargetOsDescription>
+    <SolutionConfiguration>debug|anycpu</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>io.cordova.IonicWithAngularjs</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\build\windows\bld\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>36CAC90BB6E0039B20612CEF95E8E54DE55486C8CEDB58787964BA8841B58C4E</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>io.cordova.IonicWithAngularjs_1.0.0.0_neutral__h35559jr9hy9m</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>io.cordova.IonicWithAngularjs_h35559jr9hy9m!io.cordova.IonicWithAngularjs</RegisteredUserModeAppID>
+    <RegisteredPackageID>io.cordova.IonicWithAngularjs</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Apache Cordova Team</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\build\windows\debug\anycpu\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-04-13T11:56:52.444</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\images\SplashScreen.scale-100.png">
+      <PackagePath>images\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-04-13T11:56:49.807</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\images\Square150x150Logo.scale-100.png">
+      <PackagePath>images\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-04-13T11:56:49.785</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\images\Square30x30Logo.scale-100.png">
+      <PackagePath>images\Square30x30Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-04-13T11:56:49.789</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\images\Square310x310Logo.scale-100.png">
+      <PackagePath>images\Square310x310Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-04-07T09:46:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\images\Square44x44Logo.scale-100.png">
+      <PackagePath>images\Square44x44Logo.scale-100.png</PackagePath>
+      <Modified>2016-04-07T09:46:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\images\Square70x70Logo.scale-100.png">
+      <PackagePath>images\Square70x70Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-04-13T11:56:49.795</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\images\Square71x71Logo.scale-100.png">
+      <PackagePath>images\Square71x71Logo.scale-100.png</PackagePath>
+      <Modified>2016-04-07T09:46:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\images\StoreLogo.scale-100.png">
+      <PackagePath>images\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-04-13T11:56:49.799</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\images\Wide310x150Logo.scale-100.png">
+      <PackagePath>images\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2016-04-13T11:56:49.803</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\images\icon2.png">
+      <PackagePath>www\images\icon2.png</PackagePath>
+      <Modified>2016-04-13T11:56:47.769</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\images\masterek banr.png">
+      <PackagePath>www\images\masterek banr.png</PackagePath>
+      <Modified>2016-04-13T11:56:47.771</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\images\MasterEK_Logo.png">
+      <PackagePath>www\images\MasterEK_Logo.png</PackagePath>
+      <Modified>2016-04-13T11:56:47.777</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\images\omimage.png">
+      <PackagePath>www\images\omimage.png</PackagePath>
+      <Modified>2016-04-13T11:56:47.779</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\images\radio.png">
+      <PackagePath>www\images\radio.png</PackagePath>
+      <Modified>2016-04-13T11:56:47.781</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\images\tv.png">
+      <PackagePath>www\images\tv.png</PackagePath>
+      <Modified>2016-04-13T11:56:47.826</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\images\watermark.png">
+      <PackagePath>www\images\watermark.png</PackagePath>
+      <Modified>2016-04-13T11:56:47.830</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\images\watermark1.png">
+      <PackagePath>www\images\watermark1.png</PackagePath>
+      <Modified>2016-04-13T11:56:47.832</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\images\watermark2.png">
+      <PackagePath>www\images\watermark2.png</PackagePath>
+      <Modified>2016-04-13T11:56:47.833</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\cordova.js">
+      <PackagePath>www\cordova.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.248</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\cordova_plugins.js">
+      <PackagePath>www\cordova_plugins.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.885</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\src\windows\FileProxy.js">
+      <PackagePath>www\plugins\cordova-plugin-file\src\windows\FileProxy.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.903</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\browser\isChrome.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\browser\isChrome.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.904</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\DirectoryEntry.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\DirectoryEntry.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.906</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\DirectoryReader.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\DirectoryReader.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.907</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\Entry.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\Entry.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.920</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\File.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\File.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.921</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\FileEntry.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileEntry.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.923</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\FileError.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileError.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.925</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\FileReader.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileReader.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.936</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\FileSystem.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileSystem.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.938</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\fileSystemPaths.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\fileSystemPaths.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.939</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\fileSystems.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\fileSystems.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.941</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\FileUploadOptions.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileUploadOptions.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.942</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\FileUploadResult.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileUploadResult.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.943</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\FileWriter.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileWriter.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.957</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\Flags.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\Flags.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.959</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\LocalFileSystem.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\LocalFileSystem.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.960</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\Metadata.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\Metadata.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.961</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\ProgressEvent.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\ProgressEvent.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.962</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\requestFileSystem.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\requestFileSystem.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.963</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-file\www\resolveLocalFileSystemURI.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\resolveLocalFileSystemURI.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.964</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-media\src\windows\MediaProxy.js">
+      <PackagePath>www\plugins\cordova-plugin-media\src\windows\MediaProxy.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.977</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-media\www\Media.js">
+      <PackagePath>www\plugins\cordova-plugin-media\www\Media.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.978</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\plugins\cordova-plugin-media\www\MediaError.js">
+      <PackagePath>www\plugins\cordova-plugin-media\www\MediaError.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.986</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\scripts\app.js">
+      <PackagePath>www\scripts\app.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.995</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\scripts\controllers.js">
+      <PackagePath>www\scripts\controllers.js</PackagePath>
+      <Modified>2016-04-13T11:56:48.460</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\scripts\imagelazyload.js">
+      <PackagePath>www\scripts\imagelazyload.js</PackagePath>
+      <Modified>2016-04-13T11:56:48.461</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\scripts\index.js">
+      <PackagePath>www\scripts\index.js</PackagePath>
+      <Modified>2016-04-13T11:56:48.463</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\scripts\ionic.bundle.js">
+      <PackagePath>www\scripts\ionic.bundle.js</PackagePath>
+      <Modified>2016-04-13T11:56:50.136</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\scripts\ionic.bundle.min.js">
+      <PackagePath>www\scripts\ionic.bundle.min.js</PackagePath>
+      <Modified>2016-04-13T11:56:50.214</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\scripts\ng-cordova.min.js">
+      <PackagePath>www\scripts\ng-cordova.min.js</PackagePath>
+      <Modified>2016-04-13T11:56:50.247</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\scripts\platformOverrides.js">
+      <PackagePath>www\scripts\platformOverrides.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.047</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\scripts\services.js">
+      <PackagePath>www\scripts\services.js</PackagePath>
+      <Modified>2016-04-13T11:56:50.248</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\scripts\winstore-jscompat.js">
+      <PackagePath>www\scripts\winstore-jscompat.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.115</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\WinJS\js\base.js">
+      <PackagePath>www\WinJS\js\base.js</PackagePath>
+      <Modified>2016-04-13T11:56:49.326</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\css\index.css">
+      <PackagePath>www\css\index.css</PackagePath>
+      <Modified>2016-04-13T11:56:47.458</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\css\indexkkversion.css">
+      <PackagePath>www\css\indexkkversion.css</PackagePath>
+      <Modified>2016-04-13T11:56:47.461</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\css\ionic.css">
+      <PackagePath>www\css\ionic.css</PackagePath>
+      <Modified>2016-04-13T11:56:47.610</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\css\LatestIonic.css">
+      <PackagePath>www\css\LatestIonic.css</PackagePath>
+      <Modified>2016-04-13T11:56:47.639</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\css\vssver2.scc">
+      <PackagePath>www\css\vssver2.scc</PackagePath>
+      <Modified>2016-04-13T11:56:47.664</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\fonts\vssver2.scc">
+      <PackagePath>www\fonts\vssver2.scc</PackagePath>
+      <Modified>2016-04-13T11:56:47.767</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\images\vssver2.scc">
+      <PackagePath>www\images\vssver2.scc</PackagePath>
+      <Modified>2016-04-13T11:56:47.828</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\scripts\vssver2.scc">
+      <PackagePath>www\scripts\vssver2.scc</PackagePath>
+      <Modified>2016-04-13T11:56:49.050</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\fonts\ionicons.eot">
+      <PackagePath>www\fonts\ionicons.eot</PackagePath>
+      <Modified>2016-04-13T11:56:47.682</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\fonts\ionicons.svg">
+      <PackagePath>www\fonts\ionicons.svg</PackagePath>
+      <Modified>2016-04-13T11:56:47.717</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\fonts\ionicons.ttf">
+      <PackagePath>www\fonts\ionicons.ttf</PackagePath>
+      <Modified>2016-04-13T11:56:47.758</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\fonts\ionicons.woff">
+      <PackagePath>www\fonts\ionicons.woff</PackagePath>
+      <Modified>2016-04-13T11:56:47.765</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\images\Thumbs.db">
+      <PackagePath>www\images\Thumbs.db</PackagePath>
+      <Modified>2016-04-13T11:56:47.824</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\index.html">
+      <PackagePath>www\index.html</PackagePath>
+      <Modified>2016-04-13T11:56:48.166</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\Project_Readme.html">
+      <PackagePath>www\Project_Readme.html</PackagePath>
+      <Modified>2016-04-13T11:56:48.178</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\templates\abt1.html">
+      <PackagePath>www\templates\abt1.html</PackagePath>
+      <Modified>2016-04-13T11:56:50.255</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\templates\abt2.html">
+      <PackagePath>www\templates\abt2.html</PackagePath>
+      <Modified>2016-04-13T11:56:50.257</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\templates\abtorganization.html">
+      <PackagePath>www\templates\abtorganization.html</PackagePath>
+      <Modified>2016-04-13T11:56:50.258</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\templates\centerinfo.html">
+      <PackagePath>www\templates\centerinfo.html</PackagePath>
+      <Modified>2016-04-13T11:56:50.266</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\templates\chat-detail.html">
+      <PackagePath>www\templates\chat-detail.html</PackagePath>
+      <Modified>2016-04-13T11:56:50.267</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\templates\image-popover.html">
+      <PackagePath>www\templates\image-popover.html</PackagePath>
+      <Modified>2016-04-13T11:56:49.161</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\templates\tab-account.html">
+      <PackagePath>www\templates\tab-account.html</PackagePath>
+      <Modified>2016-04-13T11:56:50.269</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\templates\tab-chats.html">
+      <PackagePath>www\templates\tab-chats.html</PackagePath>
+      <Modified>2016-04-13T11:56:50.276</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\templates\tab-dash.html">
+      <PackagePath>www\templates\tab-dash.html</PackagePath>
+      <Modified>2016-04-13T11:56:50.281</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\www\templates\tabs.html">
+      <PackagePath>www\templates\tabs.html</PackagePath>
+      <Modified>2016-04-13T11:56:50.282</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\config.xml">
+      <PackagePath>config.xml</PackagePath>
+      <Modified>2016-04-13T11:56:51.844</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Vijaysekhar\Desktop\GIT Source Controle\Win-10\platforms\windows\build\windows\debug\anycpu\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2016-04-13T11:56:52.234</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\">
+      <Name>Microsoft.WinJS.2.0</Name>
+      <Version>1.0.9600.16408</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.2.0, MinVersion=1.0.9600.16408</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\Microsoft.WinJS.2.0.appx</AppxLocation>
+      <MoreInfo>http://go.microsoft.com/fwlink/%3fLinkId=260891</MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

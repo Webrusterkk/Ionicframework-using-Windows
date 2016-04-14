@@ -1,0 +1,29 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "package.appxmanifest": {
+                "parents": {
+                    "/Package/Capabilities": [
+                        {
+                            "xml": "<DeviceCapability Name=\"microphone\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "MasterE.K"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "MasterE.K"
+        }
+    },
+    "dependent_plugins": {}
+}

@@ -1,0 +1,194 @@
+﻿body {
+}
+.aboutmasterslist ul li /*Narendra*/
+{
+    color:#8A1603;
+    padding-bottom:15px;
+}
+ion-view
+
+{
+    color:#8A1603;
+}
+/*Aboutmasters*/
+  .adress {
+                width: 100%;
+                border: 1px solid #ccc;
+                clear: both;
+            }
+
+            .Half-left {
+                width: 48%;
+                padding: 5px;
+                float: left;
+                text-align: left;
+            }
+
+            .Half-right {
+                width: 48%;
+                padding: 5px;
+                float: right;
+                text-align: left;
+            }
+            .centerinfo-content
+            {
+                padding:15px;
+            }
+            .centerinfo-headings
+{
+
+    background: #FD8011;
+    max-width: 375px;
+    padding: 7px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+body {
+ 
+}
+.slider {
+  height: 100%;
+}
+.slider-slide {
+  padding-top: 80px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  font-weight: 300;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+#logo {
+  margin: 30px 0px;
+}
+#list {
+  margin: 30px auto;
+  width: 170px;
+  font-size: 20px;
+}
+#list ol {
+  margin-top: 30px;
+}
+#list ol li {
+  margin: 10px 0px;
+  list-style: decimal;
+  text-align: left;
+}
+
+
+.card1{
+     
+   margin: 20px 0px;
+    position: relative;
+   background-color: #F57538;
+   margin-bottom:0px;
+   padding-top:0px;
+}
+ .item1 {
+
+ margin-bottom:-10px;
+  padding: 5px;
+  position: relative;
+  margin-top:-15px;
+   }  
+ .item2 {
+
+ margin-bottom:15px;
+  padding: 5px;
+  position: relative;
+  margin-top:10px;
+   }  
+ /*imagegallery*/
+ .bar .title {
+ color: #eee;
+}
+
+.swipe-cards {
+ position: fixed;
+}
+
+.swipe-cards {
+ position: fixed;
+}
+
+.swipe-card {
+ -webkit-perspective: 1000;
+ -webkit-backface-visibility: hidden;
+
+ -webkit-transform: scale(1, 1);
+ left: 50%;
+ top: 50%;
+ width: 300px;
+ height: 250px;
+ margin-left: -150px;
+ margin-top: -150px;
+ box-sizing: border-box;
+ background-color: rgb(255, 255, 255);
+ border-radius: 4px;
+ overflow: hidden;
+ -webkit-animation-fill-mode: forwards;
+}
+
+.swipe-card .title {
+ height: 40px;
+ padding: 5px;
+ line-height: 30px;
+ color: #444;
+}
+
+.swipe-card .image {
+ overflow: hidden;
+ max-height: 210px;
+}
+
+.swipe-card .button {
+ border: none;
+}
+
+.swipe-card .image img {
+ width: 100%;
+ border-radius: 0px 0px 4px 4px;
+}
+
+#start-card {
+ color: #fff;
+ background-color: #30BD8A;
+ line-height: 300px;
+ word-wrap: break-word;
+ border: 6px solid #4CD68E;
+ text-align: center;
+}
+
+#start-card span {
+ display: inline-block;
+ line-height: 40px;
+ width: 200px;
+ font-size: 30px;
+ vertical-align: middle;
+}
+
+#footer .button {
+ color: #fff;
+}
+
+@-webkit-keyframes bounceIn {
+ 0% {
+   -webkit-transform: scale(0, 0);
+ }
+ 70% {
+   -webkit-transform: scale(1.2, 1.2);
+ }
+ 100% {
+   -webkit-transform: scale(1, 1);
+ }
+}
+
+.swipe-card.pop-in-start {
+ -webkit-transform: scale(0, 0);
+}   
+
+/*css for marquee images*/ 
+.title-image {
+    border-radius:50%;
+    margin-top: 8px;
+    height: 27px;
+}

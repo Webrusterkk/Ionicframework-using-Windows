@@ -1,0 +1,76 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"File\"><param name=\"wp-package\" value=\"File\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Media\"><param name=\"wp-package\" value=\"Media\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"wp-package\" value=\"NetworkStatus\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"wp-package\" value=\"SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "Properties/WMAppManifest.xml": {
+                "parents": {
+                    "/Deployment/App/Capabilities": [
+                        {
+                            "xml": "<Capability Name=\"ID_CAP_MEDIALIB_AUDIO\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<Capability Name=\"ID_CAP_MEDIALIB_PLAYBACK\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<Capability Name=\"ID_CAP_MICROPHONE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<Capability Name=\"ID_CAP_NETWORKING\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-hockeyapp": {
+            "PACKAGE_NAME": "{33a7a5c0-f8a7-11e5-a92b-9554bbc9bbd2}"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "{33a7a5c0-f8a7-11e5-a92b-9554bbc9bbd2}"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "{33a7a5c0-f8a7-11e5-a92b-9554bbc9bbd2}"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "{33a7a5c0-f8a7-11e5-a92b-9554bbc9bbd2}"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "{33a7a5c0-f8a7-11e5-a92b-9554bbc9bbd2}"
+        }
+    },
+    "dependent_plugins": {
+        "org.apache.cordova.file": {
+            "PACKAGE_NAME": "{33a7a5c0-f8a7-11e5-a92b-9554bbc9bbd2}"
+        }
+    }
+}
