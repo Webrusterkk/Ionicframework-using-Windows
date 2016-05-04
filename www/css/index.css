@@ -575,11 +575,11 @@ span.handle-label-lower {
 /* css for network connection popup end*/
  .imggallerygrids {
     position:absolute;
-    top:23%;
+    top:50%;
     min-height:100%;
     display:block;
     left:0%;
-    -webkit-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-9%, -50%);
     min-width:100%;
 }
 

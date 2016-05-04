@@ -1,7 +1,5 @@
 
 angular.module('starter.services', [])
-
-
  .factory('archiveimg', function ($http, $ionicPopup) {
      //if (window.Connection) {
      //    if (navigator.connection.type == Connection.NONE) {

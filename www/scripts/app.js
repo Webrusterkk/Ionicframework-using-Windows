@@ -161,6 +161,10 @@ angular.module('starter', ['ionic','ngCordova', 'starter.controllers', 'starter.
             cordova.plugins.Keyboard.disableScroll(true);
 
         }
+        //ionic.Platform.isIE = function () {
+        //    return ionic.Platform.ua.toLowerCase().indexOf('trident') > -1;
+        //}
+
       
         //if (window.StatusBar) {
         //    // org.apache.cordova.statusbar required

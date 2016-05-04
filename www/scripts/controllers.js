@@ -393,8 +393,18 @@ angular.module('starter.controllers', ['ngCordova'])
         });
     })
 
- .controller('aboutmasterscontroller', function ($scope, $ionicSlideBoxDelegate) {
+ .controller('aboutmasterscontroller', function ($scope, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+     $scope.$on('$ionicView.enter', function () {
+         $ionicSideMenuDelegate.canDragContent(false);
+     });
+     $scope.$on('$ionicView.leave', function () {
+         $ionicSideMenuDelegate.canDragContent(true);
+     });
+     $scope.data = {};
+     $scope.$watch('data.slider', function (nv, ov) {
 
+         $scope.slider = $scope.data.slider;
+     })
         $scope.next = function () {
             $ionicSlideBoxDelegate.next();
         };
@@ -402,38 +412,53 @@ angular.module('starter.controllers', ['ngCordova'])
         $scope.previous = function () {
             $ionicSlideBoxDelegate.previous();
         };
-  
+        $scope.options = {
+            loop: false,
+            direction: 'horizontal',
+            effect: 'fade',
+            speed: 1000,
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+        }
+
     })
 
 .controller("MediaCtrl", function ($scope, $cordovaMedia, $ionicModal, $ionicLoading) {
 
     var src,Englishmedia = null,Telugumedia = null;
-  
+    $scope.Message = false;  
     $scope.isChannelName = "English";
     $scope.isPlay = true;    
-    var isIPad = ionic.Platform.isIPad();
-    var isIOS = ionic.Platform.isIOS();
-    var isWindowsPhone = ionic.Platform.isWindowsPhone();
+    //var isIPad = ionic.Platform.isIPad();
+    //var isIOS = ionic.Platform.isIOS();
+    //var isWindowsPhone = ionic.Platform.isWindowsPhone();
     var mediaStatusCallback = function (status) {
         if (status == 1) {
            // $ionicLoading.show({ template: 'Loading...' });
         } else {
-            //$ionicLoading.hide();
+            $ionicLoading.hide();
         }
     }
 
     $scope.InitialStart = function (value1) {
        
         if (!value1) {
-           
-            if (Englishmedia == null) {               
+            
+            if (Englishmedia == null) {
+                console.log("Englishmedia=null");
+            }
+                if (Telugumedia == null)
+                {
+                    console.log("Telugumedia=null");
+                }
+            if (Englishmedia == null) {
                 Englishmedia = new Media('http://183.82.98.147:11020/;listen.pls', function () {
                     console.log("playAudio():Audio Success");
                 }, null, mediaStatusCallback);
                 $scope.isChannelName = "English";
                 $scope.isPlay = true;
-                 Englishmedia.play();
-               // $cordovaMedia.play(Englishmedia);
+                 //Englishmedia.play();
+                $cordovaMedia.play(Englishmedia);
                 //http://media.ch9.ms/ch9/ca9a/66ac2da7-efca-4e13-a494-62843281ca9a/GN13BjarneStroustrup.mp3
                 //http://183.82.98.147:11020/;stream/2
                 //http://183.82.98.147:11020/;stream.mp3
@@ -447,120 +472,44 @@ angular.module('starter.controllers', ['ngCordova'])
 
     $scope.Startlanguage = function (value1) {
 
-        //if (!value1) {
-        //    //English
-          
-        //    $scope.isChannelName = "English";
-        //    if ($scope.isPlay) {
-        //        if (isIPad || isIOS) {
-
-        //            Telugumedia.pause();
-        //            Englishmedia = new Media('http://183.82.98.147:11020/', null, null, mediaStatusCallback);
-
-        //            $cordovaMedia.play(Englishmedia);
-
-        //        }
-        //        else {
-        //            Englishmedia.setVolume(1, 1);
-        //            Telugumedia.setVolume(0, 0);
-
-        //        }
-
-        //    }
-        //    else {
-
-        //        if (isIPad || isIOS) {
-
-        //            Telugumedia.pause();
-        //            Englishmedia.pause();
-        //        }
-        //        else if (isWindowsPhone) {
-        //            Telugumedia.pause();
-        //            Englishmedia.pause();
-        //        }
-        //        else{
-        //            Telugumedia.setVolume(0, 0);
-        //            Englishmedia.setVolume(0, 0);
-        //        }
-        //    }
-        //}
-        //else {
-        //    //Telugu
-        //    $scope.isChannelName = "Telugu";
-        //    if ($scope.isPlay) {
-        //        if (!isWindowsPhone){
-        //            Englishmedia.setVolume(0, 0);
-        //        }
-               
-        //        if (Telugumedia == null) {
-
-        //            Telugumedia = new Media('http://183.82.98.147:11000/', null, null, mediaStatusCallback);
-        //            $cordovaMedia.play(Telugumedia);
-        //            if (!isWindowsPhone) {
-        //                Telugumedia.setVolume(1, 1);
-        //            }
-        //        }
-        //        else {
-        //            if (isIPad || isIOS) {
-        //                Englishmedia.pause();
-        //                // Telugumedia.pause();
-        //                Telugumedia = new Media('http://183.82.98.147:11000/', null, null, mediaStatusCallback);
-        //                $cordovaMedia.play(Telugumedia);
-
-        //            }
-        //            else {
-        //                Telugumedia.setVolume(1, 1);
-        //            }
-
-
-        //        }
-        //    }
-        //    else {
-        //        if (isIPad || isIOS) {
-
-        //            Telugumedia.pause();
-        //            Englishmedia.pause();
-        //        }
-        //        else {
-        //            Telugumedia.setVolume(0, 0);
-        //            Englishmedia.setVolume(0, 0);
-        //        }
-        //    }
-
-        //}
-
         //For Windows//
 
         if (!value1) {
             //English
             $scope.isChannelName = "English";
             if ($scope.isPlay) {
-                Telugumedia.pause();
-                Englishmedia = new Media('http://183.82.98.147:11020/;stream/2', null, null, mediaStatusCallback);
+                Telugumedia.stop();
+                //Englishmedia = new Media('http://183.82.98.147:11020/;listen.pls', null, null, mediaStatusCallback);
                 $cordovaMedia.play(Englishmedia);
             }
             else {
-                Telugumedia.pause();
-                Englishmedia.pause();
+                if (Englishmedia != null) {
+                    Englishmedia.stop();
+                }
+
+                if (Telugumedia != null) {
+                    Telugumedia.stop();
+                }
             }
         }
         else {
             //Telugu
             $scope.isChannelName = "Telugu";
             if ($scope.isPlay) {
-               
-
+                if (Englishmedia != null)
+                { Englishmedia.stop(); }
+                
                 if (Telugumedia == null) {
-
-                    Telugumedia = new Media('http://183.82.98.147:11000/;stream/2', null, null, mediaStatusCallback);
+                   
+                    Telugumedia = new Media('http://183.82.98.147:11000/;listen.pls', null, null, mediaStatusCallback);
                     $cordovaMedia.play(Telugumedia);
                    
                 }
                 else {
                     
-                        Englishmedia.pause();
+                      
                         // Telugumedia.pause();
-                        Telugumedia = new Media('http://183.82.98.147:11000/;stream/2', null, null, mediaStatusCallback);
+                       // Telugumedia = new Media('http://183.82.98.147:11000/;listen.pls', null, null, mediaStatusCallback);
                         $cordovaMedia.play(Telugumedia);
 
                     }
@@ -571,9 +520,13 @@ angular.module('starter.controllers', ['ngCordova'])
             }
             else {
                
+                if (Englishmedia != null) {
+                    Englishmedia.stop();
+                }
 
-                    Telugumedia.pause();
-                    Englishmedia.pause();
+                if (Telugumedia != null) {
+                    Telugumedia.stop();
+                }
                
             }
         }
@@ -587,66 +540,35 @@ angular.module('starter.controllers', ['ngCordova'])
             $scope.isPlay = true;
             //play channel
             if ($scope.isChannelName == "English") {
-                if (isIPad || isIOS) {
-                    //  Englishmedia = new Media('http://183.82.98.147:11020/', null, null, mediaStatusCallback);
+               // Englishmedia = new Media('http://183.82.98.147:11020/;listen.pls', null, null, mediaStatusCallback);
                     $cordovaMedia.play(Englishmedia);
-                    Telugumedia.pause();
-
-                }
-                else {
-                    Englishmedia.setVolume(1, 1);
-                    Telugumedia.setVolume(0, 0);
-                }
             }
             else {
-                if (isIPad || isIOS) {
-                    //   Telugumedia = new Media('http://183.82.98.147:11000/', null, null, mediaStatusCallback);
+                if (Telugumedia == null) {
+
+                    Telugumedia = new Media('http://183.82.98.147:11000/;listen.pls', null, null, mediaStatusCallback);
                     $cordovaMedia.play(Telugumedia);
-                    Englishmedia.pause();
 
                 }
                 else {
-                    Telugumedia.setVolume(1, 1);
-                    Englishmedia.setVolume(0, 0);
+
+
+                    // Telugumedia = new Media('http://183.82.98.147:11000/;listen.pls', null, null, mediaStatusCallback);
+                    $cordovaMedia.play(Telugumedia);
+                    //  Englishmedia.stop();
                 }
             }
-
-            //if (media == null) {
-            //    src = 'http://183.82.98.147:11020/';
-            //    media = new Media(src, null, null, mediaStatusCallback);
-            //    $cordovaMedia.play(media);
-
-            //}
-            //else {
-            //    src = 'http://183.82.98.147:11020/';
-            //    $cordovaMedia.play(media);
-            //} 
-            //media.pause();
-            //media.stop(); 
-
-
         }
         else {
             //Mute channel
-            $scope.isPlay = false;
-            //alert(value1);
-            if (isIPad || isIOS) {
-                Englishmedia.pause();
-                Telugumedia.pause();
-
-
+            $scope.isPlay = false;      
+            if (Englishmedia != null) {
+                Englishmedia.stop();
             }
-            else {
-                Englishmedia.setVolume(0, 0);
-                Telugumedia.setVolume(0, 0);
+            if(Telugumedia != null) {
+                Telugumedia.stop();
             }
-
-
-            //if (media != null & media.isPlaying()) {
-            //    alert(media.isPlaying());
-            //    $cordovaMedia.pause(media);
-            //}
-
+  
         }
     }
 
@@ -667,6 +589,8 @@ angular.module('starter.controllers', ['ngCordova'])
     };
     $scope.closeModal = function () {
         $scope.modal.hide();
+        $scope.Message =true;
+       
     };
 
 });
